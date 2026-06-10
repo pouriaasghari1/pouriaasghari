@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="index, follow">
+<title>پوریا اصغری | طراح و توسعه‌دهنده وب حرفه‌ای</title>
+<meta name="description" content="پوریا اصغری، توسعه‌دهنده وب حرفه‌ای. طراحی سایت اختصاصی، فروشگاه آنلاین، پنل مدیریت، سئو و بهینه‌سازی.">
+<meta name="keywords" content="طراحی سایت، پوریا اصغری، توسعه وب، فروشگاه آنلاین، سئو، پنل مدیریت، PHP، Python، JavaScript">
+<meta name="author" content="پوریا اصغری">
+<meta name="theme-color" content="#09090F">
+<link rel="canonical" href="https://pouriaasghari.github.io/">
+
+<!-- GitHub Pages & Repository SEO Specifications -->
+<meta name="github-developer" content="Pouria Asghari">
+<meta name="octolytics-app-id" content="github-pages">
+<meta name="pinterest" content="nopin" description="طراحی و توسعه وب پوریا اصغری">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pouriaasghari.github.io/">
+<meta property="og:title" content="پوریا اصغری | طراح و توسعه‌دهنده وب حرفه‌ای">
+<meta property="og:description" content="پوریا اصغری، توسعه‌دهنده وب حرفه‌ای. طراحی سایت اختصاصی، فروشگاه آنلاین، پنل مدیریت، سئو و بهینه‌سازی.">
+<meta property="og:image" content="pouria.jpg">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:site_name" content="پوریا اصغری">
+
+<!-- Favicon / لوگوی کنار لینک سایت -->
+<link rel="icon" type="image/png" href="pouria.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="پوریا اصغری | طراح و توسعه‌دهنده وب حرفه‌ای">
+<meta name="twitter:description" content="پوریا اصغری، توسعه‌دهنده وب حرفه‌ای. طراحی سایت اختصاصی، فروشگاه آنلاین، پنل مدیریت، سئو و بهینه‌سازی.">
+<meta name="twitter:image" content="pouria.jpg">
+
+<!-- Structured Data / Schema SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "پوریا اصغری",
+  "url": "https://pouriaasghari.github.io/",
+  "jobTitle": "توسعه‌دهنده وب حرفه‌ای",
+  "description": "طراحی سایت اختصاصی، فروشگاه آنلاین، پنل مدیریت، سئو و بک‌اند",
+  "image": "pouria.jpg",
+  "email": "kickporiya@gmail.com",
+  "sameAs": [
+    "https://instagram.com/pouriaasghari_1",
+    "https://t.me/pouriaasghari_1",
+    "https://rubika.ir/pouriaasghari_1"
+  ],
+  "knowsAbout": ["PHP","Python","JavaScript","HTML","CSS","MySQL","SEO","Web Design","Back-End"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- لودر -->
+<div id="page-loader">
+  <div class="loader-inner">
+    <div class="loader-logo">PA</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+    <p class="loader-txt">در حال بارگذاری...</p>
+  </div>
+</div>
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="c-dot" aria-hidden="true"></div>
+<div class="c-ring" aria-hidden="true"></div>
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ناوبار -->
+<header id="navbar">
+  <a href="#home" class="nav-brand" aria-label="صفحه اصلی">
+    <span class="brand-text">PA</span><span class="brand-dot"></span>
+  </a>
+  <nav class="nav-center" role="navigation" aria-label="منوی اصلی">
+    <a href="#home"    class="nl active">خانه</a>
+    <a href="#about"   class="nl">درباره</a>
+    <a href="#skills"  class="nl">مهارت‌ها</a>
+    <a href="#contact" class="nl">ارتباط با من</a>
+  </nav>
+  <button class="hbg" id="hbg" aria-label="منو" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- منوی موبایل -->
+<div id="mob-menu" role="dialog" aria-label="منوی موبایل" aria-hidden="true">
+  <a href="#home"    class="ml">🏠 خانه</a>
+  <a href="#about"   class="ml">👤 درباره</a>
+  <a href="#skills"  class="ml">💡 مهارت‌ها</a>
+  <a href="#contact" class="ml">📬 ارتباط با من</a>
+</div>
+
+<!-- ===== هیرو ===== -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="badge-wrap r">
+      <span class="pulse-dot"></span> آماده دریافت پروژه جدید
+    </div>
+    <h1 class="hero-h1 r">
+      <span class="line-sm">سلام، من</span>
+      <span class="name-grad">پوریا اصغری</span>
+      <span class="line-sm">هستم</span>
+    </h1>
+    <div class="typed-wrap r">
+      <span id="typed"></span><span class="t-cur">|</span>
+    </div>
+    <p class="hero-p r">
+      سایت می‌سازم که در گوگل دیده بشی، مشتری جذب کنی و کسب‌وکارت رشد کنه.
+      از طراحی تا راه‌اندازی، همه چیز رو با هم انجام می‌دیم.
+    </p>
+    <div class="hero-btns r">
+      <a href="#contact" class="btn-p"><i class="fas fa-comment-dots"></i> ارتباط با من</a>
+      <a href="#about"   class="btn-s"><i class="fas fa-user"></i> درباره من</a>
+    </div>
+  </div>
+
+  <!-- عکس + انیمیشن Python -->
+  <div class="hero-visual r">
+    <div class="av-wrap">
+      <div class="av-ring r1"></div>
+      <div class="av-ring r2"></div>
+      <div class="av-ring r3"></div>
+
+      <!-- حلقه Python دوار -->
+      <div class="py-orbit" aria-hidden="true">
+        <div class="py-snake">
+          <svg viewBox="0 0 44 44" width="44" height="44">
+            <defs>
+              <linearGradient id="pyg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#3b8ff7"/>
+                <stop offset="100%" stop-color="#FFD43B"/>
+              </linearGradient>
+            </defs>
+            <path d="M14 10 C14 7 17 5 22 5 C27 5 30 7 30 10 L30 22 C30 22 28 22 22 22 C16 22 14 22 14 22 Z" fill="#3b8ff7"/>
+            <path d="M30 34 C30 37 27 39 22 39 C17 39 14 37 14 34 L14 22 C14 22 16 22 22 22 C28 22 30 22 30 22 Z" fill="#FFD43B"/>
+            <circle cx="19" cy="13" r="2.2" fill="white"/>
+            <circle cx="25" cy="31" r="2.2" fill="#3b8ff7"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="av-photo">
+        <img src="pouria.jpg" alt="پوریا اصغری - توسعه‌دهنده وب" width="260" height="260" loading="eager" fetchpriority="high">
+      </div>
+
+      <div class="tt t-php">PHP</div>
+      <div class="tt t-py">
+        <svg width="14" height="14" viewBox="0 0 44 44" style="vertical-align:middle;margin-left:4px">
+          <path d="M14 10 C14 7 17 5 22 5 C27 5 30 7 30 10 L30 22 L14 22Z" fill="#3b8ff7"/>
+          <path d="M30 34 C30 37 27 39 22 39 C17 39 14 37 14 34 L14 22 L30 22Z" fill="#FFD43B"/>
+          <circle cx="19" cy="13" r="2" fill="white"/>
+          <circle cx="25" cy="31" r="2" fill="#3b8ff7"/>
+        </svg>
+        Python
+      </div>
+      <div class="tt t-js">JS</div>
+      <div class="tt t-db">DB</div>
+      <div class="tt t-seo">SEO</div>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-arr" aria-label="اسکرول به پایین">
+    <i class="fas fa-chevron-down"></i>
+  </a>
+</section>
+
+<!-- ===== درباره ===== -->
+<section id="about" class="section">
+  <div class="sec-head r">
+    <span class="sec-label">بیشتر بدان</span>
+    <h2 class="sec-title">درباره <span class="g">من</span></h2>
+  </div>
+  <div class="about-grid">
+    <div class="ab-card r">
+      <div class="ab-icon"><i class="fas fa-laptop-code"></i></div>
+      <h3>چی کار می‌کنم؟</h3>
+      <p>سایت‌های حرفه‌ای طراحی می‌کنم و تحویل می‌دم. از صفر تا صد، از طراحی ظاهر تا راه‌اندازی روی سرور.</p>
+    </div>
+    <div class="ab-card r">
+      <div class="ab-icon"><i class="fas fa-database"></i></div>
+      <h3>بک‌اند و دیتابیس</h3>
+      <p>ساختارهای بک‌اند و دیتابیس را تمیز و قابل‌گسترش می‌چینم تا سایت برای هاست و توسعه آینده آماده باشد.</p>
+    </div>
+    <div class="ab-card r">
+      <div class="ab-icon"><i class="fas fa-search"></i></div>
+      <h3>سئو حرفه‌ای</h3>
+      <p>سایتی که می‌سازم برای دیده‌شدن در گوگل بهینه می‌شود؛ از سرعت و ساختار تا محتوا و لینک‌ها.</p>
+    </div>
+    <div class="ab-card r">
+      <div class="ab-icon"><i class="fas fa-shield-alt"></i></div>
+      <h3>امنیت و سرعت</h3>
+      <p>سایت امن، سریع و بدون دردسر. بهینه‌سازی کامل سرعت، پشتیبانی منظم و حل سریع هر مشکلی.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== مهارت‌ها ===== -->
+<section id="skills" class="section bg-alt">
+  <div class="sec-head r">
+    <span class="sec-label">تخصص‌ها</span>
+    <h2 class="sec-title">مهارت‌های <span class="g">من</span></h2>
+  </div>
+  <div class="skills-wrap">
+    <div class="sk-card r"><i class="fab fa-php     sk-ic php" ></i><span>PHP</span></div>
+    <div class="sk-card r"><i class="fab fa-python  sk-ic py"  ></i><span>Python</span></div>
+    <div class="sk-card r"><i class="fab fa-js      sk-ic js"  ></i><span>JavaScript</span></div>
+    <div class="sk-card r"><i class="fab fa-html5   sk-ic html"></i><span>HTML & CSS</span></div>
+    <div class="sk-card r"><i class="fas fa-database sk-ic db" ></i><span>MySQL</span></div>
+    <div class="sk-card r"><i class="fab fa-wordpress sk-ic wp"></i><span>WordPress</span></div>
+    <div class="sk-card r"><i class="fas fa-search  sk-ic seo" ></i><span>سئو</span></div>
+    <div class="sk-card r"><i class="fas fa-server  sk-ic srv" ></i><span>سرور و هاست</span></div>
+    <div class="sk-card r"><i class="fas fa-lock    sk-ic sec" ></i><span>امنیت سایت</span></div>
+    <div class="sk-card r"><i class="fas fa-tachometer-alt sk-ic spd"></i><span>بهینه‌سازی سرعت</span></div>
+    <div class="sk-card r"><i class="fas fa-gears   sk-ic db"  ></i><span>بک‌اند</span></div>
+    <div class="sk-card r"><i class="fas fa-mobile-alt sk-ic mob"></i><span>طراحی ریسپانسیو</span></div>
+  </div>
+</section>
+
+<!-- ===== ارتباط با من ===== -->
+<section id="contact" class="section">
+  <div class="sec-head r">
+    <span class="sec-label">در تماس باش</span>
+    <h2 class="sec-title">ارتباط با <span class="g">من</span></h2>
+  </div>
+  <div class="contact-solo r">
+    <p class="contact-intro">اگه می‌خوای سایتت توی گوگل دیده بشه و مشتری جذب کنه، از همین‌جا پیام بده. 🚀</p>
+    <div class="c-links">
+      <a href="mailto:kickporiya@gmail.com" class="c-link mail">
+        <i class="fas fa-envelope"></i>
+        <div><span class="cl-lbl">ایمیل</span><span class="cl-val">kickporiya@gmail.com</span></div>
+        <i class="fas fa-arrow-left cl-arr"></i>
+      </a>
+      <a href="https://instagram.com/pouriaasghari_1" target="_blank" rel="noopener noreferrer" class="c-link insta">
+        <i class="fab fa-instagram"></i>
+        <div><span class="cl-lbl">اینستاگرام</span><span class="cl-val">pouriaasghari_1@</span></div>
+        <i class="fas fa-arrow-left cl-arr"></i>
+      </a>
+      <a href="https://t.me/pouriaasghari_1" target="_blank" rel="noopener noreferrer" class="c-link tg">
+        <i class="fab fa-telegram"></i>
+        <div><span class="cl-lbl">تلگرام</span><span class="cl-val">pouriaasghari_1@</span></div>
+        <i class="fas fa-arrow-left cl-arr"></i>
+      </a>
+      <a href="https://rubika.ir/pouriaasghari_1" target="_blank" rel="noopener noreferrer" class="c-link rb">
+        <i class="fas fa-comment-dots"></i>
+        <div><span class="cl-lbl">روبیکا</span><span class="cl-val">pouriaasghari_1@</span></div>
+        <i class="fas fa-arrow-left cl-arr"></i>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- فوتر -->
+<footer id="footer">
+  <div class="ft-top">
+    <div class="ft-brand">
+      <span class="brand-text">PA</span>
+      <span class="ft-name">پوریا اصغری</span>
+    </div>
+    <nav class="ft-nav" aria-label="منوی فوتر">
+      <a href="#home">خانه</a>
+      <a href="#about">درباره</a>
+      <a href="#skills">مهارت‌ها</a>
+      <a href="#contact">ارتباط</a>
+    </nav>
+    <div class="ft-social">
+      <a href="https://instagram.com/pouriaasghari_1" target="_blank" rel="noopener noreferrer" aria-label="اینستاگرام"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/pouriaasghari_1" target="_blank" rel="noopener noreferrer" aria-label="تلگرام"><i class="fab fa-telegram"></i></a>
+      <a href="https://rubika.ir/pouriaasghari_1" target="_blank" rel="noopener noreferrer" aria-label="روبیکا"><i class="fas fa-comment-dots"></i></a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© <span id="yr"></span> پوریا اصغری — تمام حقوق محفوظ است</p>
+  </div>
+</footer>
+
+<!-- برگشت به بالا -->
+<button class="btt" id="btt" aria-label="برگشت به بالا" hidden>
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="main.js" defer></script>
+</body>
+</html>
