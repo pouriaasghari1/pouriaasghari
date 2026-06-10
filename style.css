@@ -343,3 +343,10 @@ img { max-width: 100%; display: block; }
   html { font-size: 14px; }
   .section { padding: 3rem 1.2rem; }
 }
+
+
+/* Mobile overflow fix */
+html,body{
+max-width:100%;
+overflow-x:hidden;
+}
