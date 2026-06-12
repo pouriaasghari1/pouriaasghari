@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="aida.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>سبد خرید</title>
+</head>
+<body>
+
+    <header id="header">
+        <a href="/" class="logo-link">
+            <i class="fas fa-gamepad logo-icon"></i>
+            <span>P-GAMES</span>
+        </a>
+        <nav>
+            <ul class="navbar-list">
+                <li><a href="p_games.html"><i class="fas fa-home"></i> خانه</a></li>
+                <li><a href="shop.html"><i class="fas fa-store"></i> بازی‌ها</a></li>
+                <li><a href="cart.html" class="cart-link active"><i class="fas fa-shopping-cart"></i> سبد خرید <span class="cart-badge" id="cartBadge">0</span></a></li>
+                <li><a href="register.html"><i class="fas fa-user-plus"></i> ثبت نام</a></li>
+            </ul>
+        </nav>
+        <div class="header-contact-link" id="contactBtn">
+            <i class="fas fa-phone"></i> ارتباط با ما
+            <div class="contact-popup" id="contactPopup">
+                <p><i class="fas fa-envelope"></i> pouriaasghari@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> 09368531590</p>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding: 30px; min-height: 70vh;">
+        <h2 style="color:#c084fc; margin-bottom: 20px;"><i class="fas fa-shopping-cart"></i> سبد خرید شما</h2>
+        <div id="cartEmpty" class="cart-empty-msg" style="display:none;">
+            <i class="fas fa-shopping-cart" style="font-size: 3rem;"></i>
+            <p>سبد خرید خالی است</p>
+            <a href="shop.html" class="order-link">بازگشت به فروشگاه</a>
+        </div>
+        <div id="cartItems"></div>
+        <div style="margin-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span style="color:#fbbf24; font-size: 1.2rem;"><strong>جمع کل:</strong> <span id="cartTotal">0 تومان</span></span>
+            <a href="payment.html" class="btn-success">پرداخت</a>
+            <a href="shop.html" class="order-link" style="display:block; text-align:center; margin-top:15px;">بازگشت به فروشگاه</a>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-info-box">
+            <section class="footer-section">
+                <h3 class="footer-titel">P_GAME</h3>
+                <p class="footer-text">...</p>
+            </section>
+            <section class="footer-section">
+                <ul class="footer-list">
+                    <li><a href="index.html"><i class="fas fa-home"></i> خانه</a></li>
+                    <li><a href="shop.html"><i class="fas fa-store"></i> بازی‌ها</a></li>
+                </ul>
+            </section>
+        </div>
+        <p class="footer-copyright">pouria asghari &copy;</p>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,518 @@
+/* =====================
+   style.css - sayt gamming
+   tarahi sholokhe vali khoshgel
+   ===================== */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    direction: rtl;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background-color: #0c0b14;
+    color: #e0e0e0;
+    line-height: 1.6;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%238a2be2" opacity="0.1"/></svg>');
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---------- heder ---------- */
+#header {
+    background: #13111f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    margin: 15px 20px;
+    padding: 10px 25px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+    border: 1px solid #8a2be233;
+    box-shadow: 0 0 20px #8a2be21a;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #c084fc;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: #c084fc;
+    filter: drop-shadow(0 0 8px #c084fc);
+}
+
+/* menue */
+.navbar-list {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navbar-list a {
+    color: #ccc;
+    padding: 10px 18px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+    background: transparent;
+}
+
+.navbar-list a:hover,
+.navbar-list a.active {
+    background: #8a2be233;
+    color: #d4b5ff;
+    box-shadow: 0 0 10px #8a2be244;
+}
+
+.cart-link {
+    background: #1f1b2c;
+}
+
+.cart-badge {
+    background: #ff4d6a;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 7px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+/* dkme ertebat */
+.header-contact-link {
+    background: #8a2be2;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+
+.header-contact-link:hover {
+    background: #6d1cb0;
+}
+
+.contact-popup {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background: #1f1b2c;
+    border: 1px solid #8a2be2;
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: none;
+    min-width: 220px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 1001;
+}
+
+.contact-popup.show {
+    display: block;
+}
+
+.contact-popup p {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ccc;
+}
+
+.contact-popup i {
+    color: #c084fc;
+    width: 20px;
+    text-align: center;
+}
+
+/* ---------- mahsolat (3 taee) ---------- */
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 soton pc */
+    gap: 25px;
+    padding: 30px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    background: #13111f;
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #ffffff10;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-item:hover {
+    transform: translateY(-8px);
+    border-color: #c084fc;
+    box-shadow: 0 12px 30px rgba(192,132,252,0.2);
+}
+
+.menu-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    background: #0c0b14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.menu-item:hover .menu-img img {
+    filter: brightness(1.2);
+}
+
+.menu-item h3 {
+    border-top: 1px solid #ffffff20;
+    padding-top: 12px;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #f0e6ff;
+}
+
+.menu-info-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.menu-info-box p {
+    font-weight: bold;
+    color: #fbbf24;
+    font-size: 1.1rem;
+}
+
+.order-link {
+    background: #8a2be2;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.order-link:hover {
+    background: #c084fc;
+    box-shadow: 0 0 15px #c084fc;
+}
+/* ---------- foter yekdast ---------- */
+#footer {
+    background: #13111f;
+    padding: 30px 20px 20px;
+    margin-top: 40px;
+    border-top: 1px solid #8a2be233;
+    text-align: center;
+}
+
+.footer-info-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.footer-section {
+    flex: 1 1 250px;
+    text-align: center;
+}
+
+.footer-titel {
+    color: #c084fc;
+    margin-bottom: 15px;
+}
+
+.footer-text {
+    line-height: 1.8;
+    color: #aaa;
+    text-align: center;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-list li {
+    margin-bottom: 10px;
+}
+
+.footer-list a {
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s;
+    justify-content: center;
+}
+
+.footer-list a:hover {
+    color: #c084fc;
+    padding-right: 5px;
+}
+
+.footer-copyright {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #ffffff10;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.footer-credit {
+    color: #777;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.go-up {
+    display: inline-block;
+    background: #8a2be2;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.go-up:hover {
+    background: #c084fc;
+    box-shadow: 0 0 10px #c084fc;
+}
+
+/* ---------- sabad kharid ---------- */
+.cart-empty-msg {
+    text-align: center;
+    padding: 50px 20px;
+    color: #aaa;
+}
+
+.cart-item {
+    background: #13111f;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    border: 1px solid #ffffff10;
+}
+
+.btn-success {
+    background: #10b981;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-success:hover {
+    background: #34d399;
+    box-shadow: 0 0 15px #10b981;
+}
+
+.btn-remove {
+    background: transparent;
+    border: none;
+    color: #ff4d6a;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.btn-remove:hover {
+    transform: scale(1.2);
+    color: #ff1a40;
+}
+
+.cart-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.cart-actions .btn-success,
+.cart-actions .order-link {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+/* ---------- sabt nam vaset ---------- */
+.register-form {
+    max-width: 480px;
+    margin: 60px auto;
+    background: #13111f;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #ffffff10;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.register-form h2 {
+    text-align: center;
+    color: #c084fc;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #2d2640;
+    background: #0c0b14;
+    color: #fff;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #c084fc;
+    box-shadow: 0 0 10px #c084fc55;
+}
+
+.error-msg {
+    color: #ff4d6a;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.success-msg {
+    text-align: center;
+    color: #10b981;
+    padding: 25px;
+    font-size: 1.2rem;
+}
+
+.success-msg i {
+    margin-bottom: 10px;
+}
+
+.btn-block {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* ---------- responsiv ---------- */
+@media screen and (max-width: 992px) {
+    .menu-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 ta tablet */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .menu-list {
+        grid-template-columns: 1fr; /* 1 ta mobile */
+    }
+
+    #header {
+        flex-direction: column;
+        border-radius: 30px;
+        padding: 15px;
+    }
+
+    .navbar-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .header-contact-link {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer-info-box {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}

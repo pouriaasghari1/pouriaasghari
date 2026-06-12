@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="aida.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>P-GAMES | فروشگاه</title>
+</head>
+<body>
+
+    <header id="header">
+        <a href="/" class="logo-link">
+            <i class="fas fa-gamepad logo-icon"></i>
+            <span>P-GAMES</span>
+        </a>
+        <nav>
+            <ul class="navbar-list">
+                <li><a href="p_games.html"><i class="fas fa-home"></i> خانه</a></li>
+                <li><a href="shop.html" class="active"><i class="fas fa-store"></i> بازی‌ها</a></li>
+                <li><a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i> سبد خرید <span class="cart-badge" id="cartBadge">0</span></a></li>
+                <li><a href="register.html"><i class="fas fa-user-plus"></i> ثبت نام</a></li>
+            </ul>
+        </nav>
+        <div class="header-contact-link" id="contactBtn">
+            <i class="fas fa-phone"></i> ارتباط با ما
+            <div class="contact-popup" id="contactPopup">
+                <p><i class="fas fa-envelope"></i> pouriaasghari@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> 09368531590</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-list">
+            <!-- بازی 1 -->
+            <section class="menu-item" data-id="1" data-title="بازی GTA V" data-price="3000000" data-image="gta.jpg">
+                <img src="gta.jpg" alt="gta" class="menu-img">
+                <h3>بازی GTA V</h3>
+                <div class="menu-info-box">
+                    <p>۳,۰۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 2 -->
+            <section class="menu-item" data-id="2" data-title="Red Dead Redemption 2" data-price="4000000" data-image="red dead2.jpg">
+                <img src="red dead2.jpg" alt="rdr2" class="menu-img">
+                <h3>Red Dead Redemption 2</h3>
+                <div class="menu-info-box">
+                    <p>۴,۰۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 3 -->
+            <section class="menu-item" data-id="3" data-title="The Last of Us Part I" data-price="3500000" data-image="last1.jpg">
+                <img src="last1.jpg" alt="tlou1" class="menu-img">
+                <h3>The Last of Us Part I</h3>
+                <div class="menu-info-box">
+                    <p>۳,۵۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 4 -->
+            <section class="menu-item" data-id="4" data-title="Forza Horizon 5" data-price="3000000" data-image="forza.jpg">
+                <img src="forza.jpg" alt="forza" class="menu-img">
+                <h3>Forza Horizon 5</h3>
+                <div class="menu-info-box">
+                    <p>۳,۰۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 5 -->
+            <section class="menu-item" data-id="5" data-title="Uncharted 4" data-price="1000000" data-image="uncharted4.jpg">
+                <img src="uncharted4.jpg" alt="uncharted4" class="menu-img">
+                <h3>Uncharted 4</h3>
+                <div class="menu-info-box">
+                    <p>۱,۰۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+</div>
+            </section>
+            <!-- بازی 6 -->
+            <section class="menu-item" data-id="6" data-title="The Last of Us Part II" data-price="5000000" data-image="last2.jpg">
+                <img src="last2.jpg" alt="tlou2" class="menu-img">
+                <h3>The Last of Us Part II</h3>
+                <div class="menu-info-box">
+                    <p>۵,۰۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+        </div>
+<div class="menu-list">
+            <!-- بازی 7 -->
+            <section class="menu-item" data-id="7" data-title="Red Dead Redemption 1" data-price="1500000" data-image="red dead1.jpg">
+                <img src="red dead1.jpg" alt="rdr1" class="menu-img">
+                <h3>Red Dead Redemption 1</h3>
+                <div class="menu-info-box">
+                    <p>۱,۵۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 8 -->
+            <section class="menu-item" data-id="8" data-title="Uncharted: The Lost Legacy" data-price="2000000" data-image="uncharted5.jpg">
+                <img src="uncharted5.jpg" alt="uncharted5" class="menu-img">
+                <h3>Uncharted: The Lost Legacy</h3>
+                <div class="menu-info-box">
+                    <p>۲,۰۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 9 -->
+            <section class="menu-item" data-id="9" data-title="Resident Evil 9" data-price="3500000" data-image="evil9.jpg">
+                <img src="evil9.jpg" alt="re9" class="menu-img">
+                <h3>Resident Evil 9</h3>
+                <div class="menu-info-box">
+                    <p>۳,۵۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 10 -->
+            <section class="menu-item" data-id="10" data-title="Resident Evil 3 Remake" data-price="2500000" data-image="evil3.jpg">
+                <img src="evil3.jpg" alt="re3" class="menu-img">
+                <h3>Resident Evil 3 Remake</h3>
+                <div class="menu-info-box">
+                    <p>۲,۵۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 11 -->
+            <section class="menu-item" data-id="11" data-title="Marvel's Spider-Man" data-price="3000000" data-image="spider.jpg">
+               <img src="spider.jpg" alt="re3" class="menu-img">
+                <h3>Marvel's Spider-Man</h3>
+                <div class="menu-info-box">
+                    <p>۳,۰۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 12 -->
+            <section class="menu-item" data-id="12" data-title="Dark Souls III" data-price="2800000" data-image="solz.jpg">
+                <img src="solz.jpg" alt="darksouls3" class="menu-img">
+                <h3>Dark Souls III</h3>
+                <div class="menu-info-box">
+                    <p>۲,۸۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+        </div>
+
+        <div class="menu-list">
+            <!-- بازی 13 -->
+            <section class="menu-item" data-id="13" data-title="God of War" data-price="3000000" data-image="god of war.jpg">
+                <img src="god of war.jpg" alt="gow" class="menu-img">
+                <h3>God of War</h3>
+                <div class="menu-info-box">
+                    <p>۳,۰۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 14 -->
+            <section class="menu-item" data-id="14" data-title="Days Gone" data-price="2000000" data-image="dayes gun.jpg">
+                <img src="dayes gun.jpg" alt="daysgone" class="menu-img">
+<h3>Days Gone</h3>
+                <div class="menu-info-box">
+                    <p>۲,۰۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 15 -->
+            <section class="menu-item" data-id="15" data-title="Call of Duty: Black Ops 6" data-price="4500000" data-image="ops6.jpg">
+                <img src="ops6.jpg" alt="codbo6" class="menu-img">
+                <h3>Call of Duty: Black Ops 6</h3>
+                <div class="menu-info-box">
+                    <p>۴,۵۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 16 -->
+            <section class="menu-item" data-id="16" data-title="Assassin's Creed Shadows" data-price="3000000" data-image="shadows.jpg">
+                <img src="shadows.jpg" alt="acshadows" class="menu-img">
+                <h3>Assassin's Creed Shadows</h3>
+                <div class="menu-info-box">
+                    <p>۳,۰۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 17 -->
+            <section class="menu-item" data-id="17" data-title="The Witcher 3: Wild Hunt" data-price="4000000" data-image="wicher3.jpg">
+                <img src="wicher3.jpg" alt="witcher3" class="menu-img">
+                <h3>The Witcher 3: Wild Hunt</h3>
+                <div class="menu-info-box">
+                    <p>۴,۰۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+            <!-- بازی 18 -->
+            <section class="menu-item" data-id="18" data-title="Ghost of Tsushima" data-price="5500000" data-image="gost.jpg">
+                <img src="gost.jpg" alt="ghostoftsushima" class="menu-img">
+                <h3>Ghost of Tsushima</h3>
+                <div class="menu-info-box">
+                    <p>۵,۵۰۰,۰۰۰ تومان</p>
+                    <button class="order-link" onclick="addToCart(this)">سفارش بازی</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-info-box">
+            <section class="footer-section">
+                <h3 class="footer-titel">سایت خرید بازی P_GAME</h3>
+                <p class="footer-text">سایت خرید بازی P_GAME در سال 1404 ساخته شده...</p>
+            </section>
+            <section class="footer-section">
+                <ul class="footer-list">
+                    <li><a href="index.html"><i class="fas fa-home"></i> صفحه اصلی</a></li>
+                    <li><a href="shop.html"><i class="fas fa-store"></i> بازی‌ها</a></li>
+                </ul>
+            </section>
+        </div>
+        <p class="footer-copyright">pouria asghari &copy;</p>
+        <a href="#" class="go-up"><i class="fa fa-arrow-up"></i></a>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>
