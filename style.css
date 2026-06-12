@@ -345,21 +345,8 @@ img { max-width: 100%; display: block; }
 }
 
 
-/* Fix mobile drifting / side movement */
-@media (max-width:768px){
+/* Mobile overflow fix */
 html,body{
-overflow-x:hidden !important;
-width:100%;
-position:relative;
-}
-.hero,
-.section,
-#footer{
-overflow:hidden;
-}
-.av-ring,
-.py-orbit,
-.scroll-arr{
-animation:none !important;
-}
+max-width:100%;
+overflow-x:hidden;
 }
