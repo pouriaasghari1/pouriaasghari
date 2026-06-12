@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="robots" content="index, follow">
-<title>PouriaAsghari | پوریا اصغری</title>
+<title>پوریا اصغری | طراح و توسعه‌دهنده وب حرفه‌ای</title>
 <meta name="description" content="پوریا اصغری، توسعه‌دهنده وب حرفه‌ای. طراحی سایت اختصاصی، فروشگاه آنلاین، پنل مدیریت، سئو و بهینه‌سازی.">
 <meta name="keywords" content="طراحی سایت، پوریا اصغری، توسعه وب، فروشگاه آنلاین، سئو، پنل مدیریت، PHP، Python، JavaScript">
 <meta name="author" content="پوریا اصغری">
@@ -24,10 +24,10 @@
 <meta property="og:description" content="پوریا اصغری، توسعه‌دهنده وب حرفه‌ای. طراحی سایت اختصاصی، فروشگاه آنلاین، پنل مدیریت، سئو و بهینه‌سازی.">
 <meta property="og:image" content="pouria.jpg">
 <meta property="og:locale" content="fa_IR">
-<meta property="og:site_name" content="PouriaAsghari | پوریا اصغری">
+<meta property="og:site_name" content="پوریا اصغری">
 
 <!-- Favicon / لوگوی کنار لینک سایت -->
-<link rel="icon" type="image/png" href="pouria.png">
+<link rel="icon" type="image/png" href="fanction.icopouria.png">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
@@ -87,6 +87,7 @@
     <a href="#home"    class="nl active">خانه</a>
     <a href="#about"   class="nl">درباره</a>
     <a href="#skills"  class="nl">مهارت‌ها</a>
+    <a href="#portfolio" class="nl">نمونه‌کارها</a>
     <a href="#contact" class="nl">ارتباط با من</a>
   </nav>
   <button class="hbg" id="hbg" aria-label="منو" aria-expanded="false">
@@ -99,6 +100,7 @@
   <a href="#home"    class="ml">🏠 خانه</a>
   <a href="#about"   class="ml">👤 درباره</a>
   <a href="#skills"  class="ml">💡 مهارت‌ها</a>
+  <a href="#portfolio" class="ml">🖼️ نمونه‌کارها</a>
   <a href="#contact" class="ml">📬 ارتباط با من</a>
 </div>
 
@@ -228,6 +230,26 @@
   </div>
 </section>
 
+
+<section id="portfolio" class="section">
+  <div class="sec-head r">
+    <span class="sec-label">نمونه پروژه‌ها</span>
+    <h2 class="sec-title">نمونه <span class="g">کارها</span></h2>
+  </div>
+  <div class="about-grid">
+     <a class="ab-card r" href="pouria/p_shop/p_shop.html">
+      <div class="ab-icon">🛍️</div>
+      <h3>p_shop</h3>
+      <p>مشاهده پروژه فروشگاه آنلاین.</p>
+    </a>
+     <a class="ab-card r" href="pouria/site game/index.html">
+      <div class="ab-icon">🎮</div>
+      <h3>p_game</h3>
+      <p>مشاهده پروژه سایت بازی.</p>
+    </a>
+  </div>
+</section>
+
 <!-- ===== ارتباط با من ===== -->
 <section id="contact" class="section">
   <div class="sec-head r">
@@ -290,5 +312,18 @@
 </button>
 
 <script src="main.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ document.querySelectorAll('a[href="pouria/p_shop/p_shop.html"],a[href="pouria/site game/index.html"]').forEach(a=>{
+   a.addEventListener('click',e=>{
+     e.preventDefault();
+     const loader=document.getElementById('page-loader');
+     if(loader) loader.classList.remove('hide');
+     setTimeout(()=>location.href=a.href,700);
+   });
+ });
+});
+</script>
 </body>
 </html>
