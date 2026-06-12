@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p_shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="pouria.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">p_shop</div>
+            <ul class="nav-menu">
+                <li><a href="p_shop.html" class="">خانه</a></li>
+                <li><a href="oila.html" class="">  محصولات بیشتر</a></li>
+                <li><a href="tel.html" class="">پل‌های ارتباطی</a></li>
+            </ul>
+            <a href="lob.html" class="cart-btn">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>سبد خرید</span>
+                <span class="cart-badge">0</span>
+            </a>
+        </div>
+    </header>
+
+    
+<div class="glass-box" style="max-width:900px;">
+    <h2 style="margin-bottom: 25px; color:#00f0ff;">سفارشات نهایی شده</h2>
+    <table style="width:100%; border-collapse:collapse; text-align:right; margin-bottom:30px;">
+        <thead>
+            <tr style="color:var(--text-muted); border-bottom:1px solid rgba(255,255,255,0.08);">
+                <th style="padding-bottom:12px;">آیتم</th>
+                <th style="padding-bottom:12px;">عدد</th>
+                <th style="padding-bottom:12px;">تعداد</th>
+                <th style="padding-bottom:12px;">مجموع کالا</th>
+            </tr>
+        </thead>
+        <tbody id="cart-tbody"></tbody>
+    </table>
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+        <div>کل سبد خرید: <span id="cart-total-amount" style="font-weight:900; font-size:22px; color:#ff0055;">۰ تومان</span></div>
+        <div style="display:flex; gap:12px;">
+            <button class="btn-glow" style="background:none; border:1px solid #334155; box-shadow:none;" onclick="clearCart()">تخلیه سبد</button>
+            <button class="btn-glow" onclick="alert('اتصال هوشمند به درگاه شتاب انجام شد.')">پرداخت و ثبت نهایی</button>
+        </div>
+    </div>
+</div>
+<script>setTimeout(() => { renderCartTable(); }, 100);</script>
+
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-text">تمام استایل‌ها و ساختارها بر اساس الگوهای اختصاصی پوریا اصغری  طراحی شده است</div>
+            <div class="logo" style="font-size:16px;">p_shop</div>
+        </div>
+    </footer>
+
+    <script src="man.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> p_shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="pouria.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">p_shop</div>
+            <ul class="nav-menu">
+                <li><a href="p_shop.html" class="active">خانه</a></li>
+                <li><a href="oila.html" class="">محصولات بیشتر</a></li>
+                <li><a href="tel.html" class="">پل‌های ارتباطی</a></li>
+            </ul>
+            <a href="lob.html" class="cart-btn">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>سبد خرید</span>
+                <span class="cart-badge">0</span>
+            </a>
+        </div>
+    </header>
+
+    
+<main class="hero">
+    <div class="hero-banner">
+        <h1>ویترین لوکس </h1>
+        <p>مجموعه‌ای غنی از عکس‌های باکیفیت و استایل تمام عیار نئون-دارک؛ ساختاری کاملاً هماهنگ، پویا و ریسپانسیو.</p>
+        <a href="oila.html" class="btn-glow">مشاهده گالری و محصولات فراوان</a>
+    </div>
+</main>
+
+<h2 class="section-title">برترین‌های کالکشن اختصاصی</h2>
+<div class="products-grid">
+    <div class="product-card" style="--accent-color: #ff0055; --accent-glow: rgba(255, 0, 85, 0.2);>
+        <span class="badge">مجلسی لوکس</span>
+        <div class="product-img-holder">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80" alt="پوشاک مجلسی">
+        </div>
+        <div class="product-details">
+            <div class="product-cat">کالکشن لباس مجلسی</div>
+            <h3 class="product-name">ست ماکسی پرمیوم لومینو</h3>
+            <div class="product-footer">
+                <span class="new-price">۲,۸۹۰,۰۰۰ تومان</span>
+                <button class="buy-icon-btn" onclick="addToCart(101, 'ست ماکسی لومینو', 2890000, 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80', '#ff0055')">
+                    <i class="fa-solid fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" style="--accent-color: #00ff66; --accent-glow: rgba(0, 255, 102, 0.2);">
+        <span class="badge">کلاسیک دارک</span>
+        <div class="product-img-holder">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&q=80" alt="پوشاک کلاسیک">
+        </div>
+        <div class="product-details">
+            <div class="product-cat">کت و پالتو</div>
+            <h3 class="product-name">پالتو مخمل طرح ماتریکس</h3>
+            <div class="product-footer">
+                <span class="new-price">۴,۵۰۰,۰۰۰ تومان</span>
+                <button class="buy-icon-btn" onclick="addToCart(102, 'پالتو مخمل ماتریکس', 4500000, 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&q=80', '#00ff66')">
+                    <i class="fa-solid fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <footer>
+        <div class="footer-inner">
+           <div class="footer-text">تمام استایل‌ها و ساختارها بر اساس الگوهای اختصاصی پوریا اصغری  طراحی شده است</div>
+            <div class="logo" style="font-size:16px;">p_shop</div>
+        </div>
+    </footer>
+
+    <script src="man.js"></script>
+</body>
+</html>

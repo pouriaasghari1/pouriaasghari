@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p_shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="pouria.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">p_shop</div>
+            <ul class="nav-menu">
+                <li><a href="p_shop.html" class="">خانه</a></li>
+                <li><a href="oila.html" class="active">محصولات بیشتر</a></li>
+                <li><a href="tel.html" class="">پل‌های ارتباطی</a></li>
+            </ul>
+            <a href="lob.html" class="cart-btn">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>سبد خرید</span>
+                <span class="cart-badge">0</span>
+            </a>
+        </div>
+    </header>
+
+    
+<div class="archive-layout">
+    <aside class="filter-sidebar">
+        <div class="filter-group">
+            <h4>فیلتر هوشمند کالکشن</h4>
+            <label class="checkbox-item"><input type="checkbox" data-filter="cat" value="suit"> کت و پالتو مجلسی</label>
+            <label class="checkbox-item"><input type="checkbox" data-filter="cat" value="shoes"> کفش و کتانی پرمیوم</label>
+            <label class="checkbox-item"><input type="checkbox" data-filter="cat" value="acc"> اکسسوری‌های دارک</label>
+        </div>
+    </aside>
+
+    <main class="archive-content">
+        <div class="products-grid" style="padding: 0;">
+            
+            <div class="product-card" data-category="suit" style="--accent-color: #ff00ff; --accent-glow: rgba(255,0,255,0.2);">
+                <div class="product-img-holder"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&q=80"></div>
+                <div class="product-details">
+                    <div class="product-cat">کت و شلوار</div>
+                    <h3 class="product-name">کت مجلسی اسلیم بلک</h3>
+                    <div class="product-footer">
+                        <span class="new-price">۳,۲۰۰,۰۰۰ تومان</span>
+                        <button class="buy-icon-btn" onclick="addToCart(1, 'کت مجلسی اسلیم بلک', 3200000, 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&q=80', '#ff00ff')"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="shoes" style="--accent-color: #00f0ff; --accent-glow: rgba(0,240,255,0.2);">
+                <div class="product-img-holder"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80"></div>
+                <div class="product-details">
+                    <div class="product-cat">کفش کلاسیک</div>
+                    <h3 class="product-name">کفش ورنی گلاس شاین</h3>
+                    <div class="product-footer">
+                        <span class="new-price">۲,۹۵۰,۰۰۰ تومان</span>
+                        <button class="buy-icon-btn" onclick="addToCart(2, 'کفش ورنی گلاس شاین', 2950000, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80', '#00f0ff')"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="acc" style="--accent-color: #ffaa00; --accent-glow: rgba(255,170,0,0.2);">
+                <div class="product-img-holder"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80"></div>
+                <div class="product-details">
+                    <div class="product-cat">ساعت لوکس</div>
+                    <h3 class="product-name">ساعت مچی کرونوگراف پلاس</h3>
+                    <div class="product-footer">
+                        <span class="new-price">۵,۸۰۰,۰۰۰ تومان</span>
+                        <button class="buy-icon-btn" onclick="addToCart(3, 'ساعت کرونوگراف پلاس', 5800000, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80', '#ffaa00')"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="suit" style="--accent-color: #00ff66; --accent-glow: rgba(0,255,102,0.2);">
+                <div class="product-img-holder"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&q=80"></div>
+                <div class="product-details">
+                    <div class="product-cat">پوشاک مجلسی</div>
+                    <h3 class="product-name">ست الگانس ابریشمی</h3>
+                    <div class="product-footer">
+                        <span class="new-price">۶,۴۰۰,۰۰۰ تومان</span>
+                        <button class="buy-icon-btn" onclick="addToCart(4, 'ست الگانس ابریشمی', 6400000, 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&q=80', '#00ff66')"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+
+    <footer>
+        <div class="footer-inner">
+           <div class="footer-text">تمام استایل‌ها و ساختارها بر اساس الگوهای اختصاصی پوریا اصغری  طراحی شده است</div>
+            <div class="logo" style="font-size:16px;">p_shop</div>
+        </div>
+    </footer>
+
+    <script src="man.js"></script>
+</body>
+</html>
