@@ -10,7 +10,24 @@
   const draw=()=>{ctx.clearRect(0,0,w,h);for(let i=0;i<pts.length;i++){const p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='hsla('+(hue+i*2%60)+',90%,72%,.48)';ctx.fill();for(let j=i+1;j<pts.length;j++){const q=pts[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<95){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle='hsla('+hue+',90%,70%,'+((1-d/95)*.11)+')';ctx.lineWidth=.6;ctx.stroke()}}}trail.forEach((p,i)=>{p.life-=.045;const r=(i/trail.length)*6+1;ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fillStyle='hsla('+p.hue+',100%,70%,'+Math.max(0,p.life*.65)+')';ctx.fill()});trail=trail.filter(p=>p.life>0);raf=requestAnimationFrame(draw)};draw();
  }
  const transition=$('.transition-overlay');
- $$('a[data-transition]').forEach(a=>a.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank')return;const href=a.getAttribute('href');if(!href||href.startsWith('#')||href.startsWith('mailto:'))return;e.preventDefault();if(transition)transition.classList.add('on');setTimeout(()=>location.href=href,180)}));
+ // Clear the page transition when the browser restores a page from its back/forward cache.
+ // Without this, the opaque overlay can remain above the page until a manual refresh.
+ const clearTransition=()=>{if(transition)transition.classList.remove('on');};
+ window.addEventListener('pageshow',clearTransition);
+ window.addEventListener('popstate',clearTransition);
+ window.addEventListener('pagehide',()=>{if(transition)transition.classList.remove('on');});
+ $('a[data-transition]').forEach(a=>a.addEventListener('click',e=>{
+  if(e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download'))return;
+  const href=a.getAttribute('href');
+  if(!href||href.startsWith('#')||href.startsWith('mailto:')||href.startsWith('tel:'))return;
+  const target=new URL(href,location.href);
+  if(target.origin!==location.origin)return;
+  // Same-document anchors should scroll normally instead of triggering a full-page overlay.
+  if(target.pathname===location.pathname&&target.search===location.search){return;}
+  e.preventDefault();
+  if(transition&&!reduced)transition.classList.add('on');
+  window.setTimeout(()=>{location.href=target.href;},reduced?0:180);
+ }));
  const filterButtons=$$('.filter-btn'),cards=$$('.project-card[data-category]');
  filterButtons.forEach(btn=>btn.addEventListener('click',()=>{filterButtons.forEach(b=>b.classList.toggle('active',b===btn));const cat=btn.dataset.filter;cards.forEach(card=>{const show=cat==='all'||card.dataset.category.split(' ').includes(cat);card.hidden=!show;if(show){card.style.animation='none';void card.offsetWidth;card.style.animation=''}})}));
  cards.forEach(card=>card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect();card.style.setProperty('--mx',(e.clientX-r.left)+'px');card.style.setProperty('--my',(e.clientY-r.top)+'px')}));
