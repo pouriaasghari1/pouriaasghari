@@ -19,7 +19,7 @@ GitHub Pages only serves static files and cannot execute the `api/*.js` server f
    - `APP_ACCESS_CODE`: create a long, unique access code for your own use. Do not publish it.
 4. Redeploy after adding environment variables.
 5. Open `/studio.html` on the deployed Vercel domain.
-6. The browser UI needs to send `x-app-code`; enter your access code when prompted by the browser. Do not send either secret to anyone.
+6. On `/studio.html`, enter your private access code in the `کد دسترسی خصوصی` field. Do not send either secret to anyone.
 
 ## API and cost notes
 - Image generation uses FLUX Schnell.
