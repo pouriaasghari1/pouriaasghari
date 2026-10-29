@@ -37,8 +37,9 @@
   }),{threshold:.12,rootMargin:'0px 0px -35px 0px'});
   $$('.home-page .reveal').forEach(el=>revealObserver.observe(el));
  }else{
-  $$('.home-page .reveal').forEach(el=>el.classList.add('is-visible'));
+  $('.home-page .reveal').forEach(el=>el.classList.add('is-visible'));
  }
+ document.body.classList.add('js-ready');
  filterButtons.forEach(btn=>btn.addEventListener('click',()=>{
   filterButtons.forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn));});
   const cat=btn.dataset.filter;
