@@ -435,3 +435,7 @@ body[data-project] .choice-btn:disabled{cursor:default}
  .home-page .project-card,.home-page .button,.home-page .contact-links>a{transition:none!important}
  .home-page .gradient-text{animation:none}
 }
+
+/* Progressive enhancement and hover precedence for revealed cards */
+.home-page:not(.js-ready) .reveal{opacity:1;transform:none}
+.home-page .project-card.reveal.is-visible:hover{transform:translateY(-7px)}
