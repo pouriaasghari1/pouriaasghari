@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="استودیوی ساخت تصویر و ویدئوی هوش مصنوعی">
+  <title>NEURAFRAME — AI Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./studio.css">
+  <script src="./studio.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="./studio.html" aria-label="Neuraframe home"><span class="brand-mark">N</span><span>NEURA<span class="brand-light">FRAME</span></span></a>
+    <div class="top-meta"><span class="status-dot"></span><span>GENERATIVE STUDIO</span><span class="top-divider"></span><span>v1.0</span></div>
+  </header>
+  <main class="shell">
+    <section class="intro">
+      <div class="eyebrow"><span class="eyebrow-line"></span> YOUR IDEAS, RENDERED</div>
+      <h1>از خیال، <span>تصویر بساز.</span></h1>
+      <p>توصیف کن؛ مدل هوش مصنوعی واقعاً تصویر یا ویدئو تولید می‌کند. خروجی ساختگی و نمایشی نیست.</p>
+    </section>
+    <section class="studio-grid">
+      <aside class="control-panel">
+        <div class="panel-head"><div><span class="panel-kicker">CREATE</span><h2>استودیوی ساخت</h2></div><span class="sparkle">✳</span></div>
+        <div class="mode-switch" role="tablist" aria-label="نوع خروجی">
+          <button class="mode active" id="imageMode" type="button" role="tab" aria-selected="true"><span>▧</span> ساخت تصویر</button>
+          <button class="mode" id="videoMode" type="button" role="tab" aria-selected="false"><span>▶</span> ساخت ویدئو</button>
+        </div>
+        <form id="generateForm">
+          <label class="field-label" for="prompt">ایده‌ات را توصیف کن <span class="optional">PROMPT</span></label>
+          <textarea id="prompt" maxlength="1200" required placeholder="مثلاً: یک شهر آینده‌نگر در دل کویر، معماری شیشه‌ای، نور طلایی غروب، سینمایی و بسیار پرجزئیات..." rows="6"></textarea>
+          <div class="prompt-foot"><span id="promptHint">توضیحات دقیق‌تر معمولاً نتیجه بهتری می‌دهند.</span><span id="charCount">۰ / ۱۲۰۰</span></div>
+          <div class="settings-row">
+            <div class="setting"><label for="ratio">نسبت تصویر</label><select id="ratio"><option value="landscape_16_9">افقی 16:9</option><option value="square">مربع 1:1</option><option value="portrait_16_9">عمودی 9:16</option></select></div>
+            <div class="setting video-setting" id="durationSetting" hidden><label for="duration">مدت ویدئو</label><select id="duration"><option value="6">۶ ثانیه</option><option value="8">۸ ثانیه</option><option value="10">۱۰ ثانیه</option></select></div>
+          </div>
+          <div class="notice"><span class="notice-icon">ⓘ</span><span>تولید با سرویس واقعی انجام می‌شود و ممکن است اعتبار API مصرف کند. قبل از تنظیم کلیدها، دکمه تولید فعال نخواهد شد.</span></div>
+          <button class="generate-btn" id="generateBtn" type="submit"><span class="btn-icon">✦</span><span id="buttonLabel">تولید تصویر</span><span class="btn-arrow">↗</span></button>
+          <p class="privacy-note">کلید سرویس روی سرور نگه‌داری می‌شود و نباید داخل کد مرورگر قرار بگیرد.</p>
+        </form>
+      </aside>
+      <section class="result-panel" aria-live="polite">
+        <div class="result-top"><div><span class="panel-kicker">OUTPUT CANVAS</span><h2>فضای خروجی</h2></div><span class="result-badge" id="resultBadge">آماده تولید</span></div>
+        <div class="canvas" id="canvas">
+          <div class="canvas-grid"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="placeholder-art" aria-hidden="true"><div class="art-core"><span>✳</span></div><div class="art-ring ring-a"></div><div class="art-ring ring-b"></div><div class="art-ring ring-c"></div><div class="art-star star-a">✦</div><div class="art-star star-b">✧</div></div>
+          <div class="empty-copy" id="emptyCopy"><span class="empty-overline">WAITING FOR YOUR IDEA</span><h3>اثر بعدی از همین‌جا شروع می‌شود.</h3><p>یک توصیف بنویس و دکمه تولید را بزن.</p></div>
+          <div class="loader" id="loader" hidden><div class="loader-orb"></div><strong id="loaderTitle">در حال ساخت...</strong><span id="loaderText">مدل در حال پردازش درخواست است.</span><div class="progress-track"><div class="progress-bar"></div></div><small>ممکن است تا چند دقیقه زمان ببرد.</small></div>
+          <div class="media-output" id="mediaOutput" hidden></div>
+        </div>
+        <div class="output-footer"><div class="output-info"><span class="output-dot"></span><span id="outputStatus">منتظر درخواست شما</span></div><a id="downloadLink" class="download-btn" href="#" download hidden>دانلود خروجی <span>↓</span></a></div>
+        <div class="footnote"><span>NEURAFRAME</span><span>CREATIVE INTELLIGENCE / 2026</span></div>
+      </section>
+    </section>
+    <footer><span>ساخته‌شده برای تبدیل ایده به خروجی واقعی.</span><span class="footer-right">IMAGE + VIDEO GENERATION</span></footer>
+  </main>
+  <dialog id="errorDialog" class="error-dialog"><div class="dialog-icon">!</div><h3>تولید انجام نشد</h3><p id="errorText">خطایی رخ داد.</p><button id="closeError" type="button">متوجه شدم</button></dialog>
+</body>
+</html>
