@@ -6,6 +6,7 @@
   const videoMode = $("#videoMode");
   const ratio = $("#ratio");
   const duration = $("#duration");
+  const accessCode = $("#accessCode");
   const durationSetting = $("#durationSetting");
   const button = $("#generateBtn");
   const buttonLabel = $("#buttonLabel");
@@ -100,14 +101,14 @@
   }
   async function generateImage(text) {
     const data = await parseResponse(await fetch("/api/generate-image", {
-      method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({prompt:text, image_size:ratio.value})
+      method: "POST", headers: {"Content-Type":"application/json", "x-app-code": accessCode.value.trim()}, body: JSON.stringify({prompt:text, image_size:ratio.value})
     }));
     if (!data.imageUrl) throw new Error("سرویس پاسخی داد اما لینک تصویر در خروجی نبود.");
     showMedia(data.imageUrl, "image");
   }
   async function generateVideo(text) {
     const started = await parseResponse(await fetch("/api/generate-video", {
-      method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({prompt:text, aspect_ratio:ratio.value, duration:duration.value})
+      method: "POST", headers: {"Content-Type":"application/json", "x-app-code": accessCode.value.trim()}, body: JSON.stringify({prompt:text, aspect_ratio:ratio.value, duration:duration.value})
     }));
     if (!started.request_id) {
       if (started.videoUrl) return showMedia(started.videoUrl, "video");
@@ -118,7 +119,7 @@
     for (let attempt = 0; attempt < maxAttempts; attempt++) {
       await new Promise(resolve => setTimeout(resolve, 4000));
       loaderText.textContent = "درخواست در صف سرویس است؛ این مرحله ممکن است چند دقیقه طول بکشد.";
-      const status = await parseResponse(await fetch("/api/video-status?request_id=" + encodeURIComponent(id)));
+      const status = await parseResponse(await fetch("/api/video-status?request_id=" + encodeURIComponent(id), {headers: {"x-app-code": accessCode.value.trim()}}));
       if (status.status === "COMPLETED" && status.videoUrl) return showMedia(status.videoUrl, "video");
       if (status.status === "FAILED" || status.status === "CANCELLED") throw new Error(status.error || "مدل نتوانست ویدئو را تولید کند. دوباره امتحان کن.");
     }
@@ -127,6 +128,7 @@
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const text = prompt.value.trim();
+    if (!accessCode.value.trim()) return showError("کد دسترسی خصوصی را وارد کن. این همان APP_ACCESS_CODE است که در تنظیمات سرور گذاشتی.");
     if (text.length < 4) return showError("لطفاً یک توضیح کمی دقیق‌تر بنویس.");
     mediaOutput.replaceChildren();
     mediaOutput.hidden = true;
