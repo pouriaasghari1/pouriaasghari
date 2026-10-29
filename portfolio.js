@@ -28,17 +28,16 @@
   if(transition&&!reduced)transition.classList.add('on');
   window.setTimeout(()=>{location.href=target.href;},reduced?0:180);
  }));
- const filterButtons=$('.filter-btn'),cards=$('.project-card[data-category]');
+ const filterButtons=$$('.filter-btn'),cards=$$('.project-card[data-category]');
  // Scroll reveals: keep the page lively without hiding content if the API is unavailable.
- const revealItems=$('.home-page .reveal');
  cards.forEach(card=>card.classList.add('reveal'));
  if(!reduced&&'IntersectionObserver' in window){
   const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
    if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}
   }),{threshold:.12,rootMargin:'0px 0px -35px 0px'});
-  $('.home-page .reveal').forEach(el=>revealObserver.observe(el));
+  $$('.home-page .reveal').forEach(el=>revealObserver.observe(el));
  }else{
-  $('.home-page .reveal').forEach(el=>el.classList.add('is-visible'));
+  $$('.home-page .reveal').forEach(el=>el.classList.add('is-visible'));
  }
  filterButtons.forEach(btn=>btn.addEventListener('click',()=>{
   filterButtons.forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn));});
