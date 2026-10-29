@@ -39,7 +39,8 @@
             <div class="setting"><label for="ratio">نسبت تصویر</label><select id="ratio"><option value="landscape_16_9">افقی 16:9</option><option value="square">مربع 1:1</option><option value="portrait_16_9">عمودی 9:16</option></select></div>
             <div class="setting video-setting" id="durationSetting" hidden><label for="duration">مدت ویدئو</label><select id="duration"><option value="6">۶ ثانیه</option><option value="8">۸ ثانیه</option><option value="10">۱۰ ثانیه</option></select></div>
           </div>
-          <div class="notice"><span class="notice-icon">ⓘ</span><span>تولید با سرویس واقعی انجام می‌شود و ممکن است اعتبار API مصرف کند. قبل از تنظیم کلیدها، دکمه تولید فعال نخواهد شد.</span></div>
+          <div class="access-field"><label for="accessCode">کد دسترسی خصوصی <span class="optional">PRIVATE ACCESS</span></label><input id="accessCode" type="password" autocomplete="current-password" placeholder="کدی که در تنظیمات سرور تعیین کردی" maxlength="160" required></div>
+          <div class="notice"><span class="notice-icon">ⓘ</span><span>تولید با سرویس واقعی انجام می‌شود و ممکن است اعتبار API مصرف کند. کلید اصلی سرویس هرگز در مرورگر وارد نمی‌شود؛ فقط کد دسترسی خصوصی خودت را وارد کن.</span></div>
           <button class="generate-btn" id="generateBtn" type="submit"><span class="btn-icon">✦</span><span id="buttonLabel">تولید تصویر</span><span class="btn-arrow">↗</span></button>
           <p class="privacy-note">کلید سرویس روی سرور نگه‌داری می‌شود و نباید داخل کد مرورگر قرار بگیرد.</p>
         </form>
