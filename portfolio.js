@@ -16,7 +16,7 @@
  window.addEventListener('pageshow',clearTransition);
  window.addEventListener('popstate',clearTransition);
  window.addEventListener('pagehide',()=>{if(transition)transition.classList.remove('on');});
- $('a[data-transition]').forEach(a=>a.addEventListener('click',e=>{
+ $$('a[data-transition]').forEach(a=>a.addEventListener('click',e=>{
   if(e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download'))return;
   const href=a.getAttribute('href');
   if(!href||href.startsWith('#')||href.startsWith('mailto:')||href.startsWith('tel:'))return;
