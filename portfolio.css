@@ -139,3 +139,43 @@ body[data-project] button:focus-visible,body[data-project] a:focus-visible{outli
 @media(max-width:700px){body[data-project] .page-hero{padding:28px 0 20px}body[data-project] .project-heading{gap:14px;padding:19px 16px 30px;border-radius:19px}body[data-project] .project-heading:before{left:15px;font-size:8px}body[data-project] .project-heading .card-icon{width:55px;height:55px;border-radius:16px;font-size:24px}body[data-project] .project-heading h1{font-size:clamp(25px,7vw,36px)}body[data-project] .project-heading p{font-size:11px}body[data-project] .project-layout{grid-template-columns:minmax(0,1fr);gap:13px;padding:18px 0 50px}body[data-project] .play-card{min-height:0;padding:23px 18px;border-radius:20px}body[data-project] .play-card:after{top:19px;left:17px;font-size:8px;padding:5px 7px}body[data-project] .play-card h2{margin-right:0;margin-left:90px;font-size:20px}body[data-project] .play-card .subtext{font-size:12px;margin-bottom:19px}body[data-project] .game-visual{min-height:170px;padding:15px;margin:18px 0}body[data-project] .side-panel{padding:21px 19px;border-radius:19px}body[data-project] .letter-grid{grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}body[data-project] .letter-btn{border-radius:9px}body[data-project] #treasure-grid{gap:6px!important}body[data-project] #treasure-grid .choice-btn{min-height:40px;font-size:15px}}
 @media(max-width:390px){body[data-project] .play-card h2{margin-left:0;padding-top:35px}body[data-project] .play-card:after{top:17px;left:auto;right:18px}body[data-project] .form-row{grid-template-columns:1fr}body[data-project] .letter-grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){body[data-project] .project-heading:after,body[data-project] .project-heading .card-icon,body[data-project] .big-symbol,body[data-project] .project-layout>*{animation:none!important}}
+
+
+/* Per-project art direction: each demo gets its own accent identity */
+body[data-project="password"]{--cyan:#64f2c1;--violet:#7b9cff;--pink:#64f2c1}
+body[data-project="password"] .project-heading .card-icon{color:#64f2c1;border-color:#64f2c15c}
+body[data-project="password"] #pw-len{font:700 20px ui-monospace,monospace;direction:ltr}
+body[data-project="password"] .game-form>.game-buttons:has(#pw-upper){display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+body[data-project="password"] .game-form>.game-buttons:has(#pw-upper) .choice-btn{display:flex;align-items:center;gap:9px;justify-content:flex-start;min-height:48px}
+body[data-project="password"] .game-form>.game-buttons:has(#pw-upper) input{accent-color:#64f2c1;width:16px;height:16px}
+body[data-project="password"] #game-result.success{direction:ltr;text-align:center;font:800 clamp(15px,2vw,20px) ui-monospace,monospace;letter-spacing:.045em;overflow-wrap:anywhere;user-select:all}
+body[data-project="hangman"]{--cyan:#64d8ff;--violet:#9d8bff;--pink:#ff70b8}
+body[data-project="hangman"] #hang-word{letter-spacing:.28em;color:#f2fbff}
+body[data-project="hangman"] #hang-letters{max-width:580px;margin-inline:auto}
+body[data-project="rps"]{--cyan:#a8a0ff;--violet:#ff75c8;--pink:#a8a0ff}
+body[data-project="rps"] #rps-visual{display:flex;align-items:center;justify-content:center;gap:clamp(8px,3vw,25px);width:100%;font-size:clamp(30px,6vw,60px)}
+body[data-project="rps"] .game-buttons:has([data-action^="rps-"]){display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+body[data-project="rps"] .game-buttons:has([data-action^="rps-"]) .choice-btn{min-height:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:14px}
+body[data-project="rps"] .game-buttons:has([data-action^="rps-"]) .choice-btn:first-letter{font-size:25px}
+body[data-project="adventure"]{--cyan:#ffbd72;--violet:#c69cff;--pink:#ff7c8d}
+body[data-project="adventure"] .project-heading .card-icon{background:linear-gradient(145deg,#30231b,#191423)}
+body[data-project="adventure"] #story-title{padding:15px 17px;border:1px solid #ffbd7230;border-radius:13px;background:linear-gradient(110deg,#ffbd7210,#c69cff08)}
+body[data-project="adventure"] #story-copy{min-height:85px;padding:18px;border-right:2px solid #ffbd72;background:linear-gradient(90deg,transparent,#ffbd7208);border-radius:8px}
+body[data-project="adventure"] .game-buttons:has(#story-forest){display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+body[data-project="treasure"]{--cyan:#ffd16a;--violet:#65e6c3;--pink:#ff9d6a}
+body[data-project="treasure"] .project-heading .card-icon{background:linear-gradient(145deg,#302919,#151b1b)}
+body[data-project="treasure"] #treasure-grid .choice-btn{position:relative;overflow:hidden;border-color:#6e6545;background:linear-gradient(145deg,#20291f,#111a19);box-shadow:inset 0 1px #ffffff0b}
+body[data-project="treasure"] #treasure-grid .choice-btn:not(:disabled):hover{border-color:#ffd16a;background:linear-gradient(145deg,#3a3421,#1a2822);box-shadow:0 0 22px #ffd16a18}
+body[data-project="treasure"] #treasure-grid .choice-btn:disabled{opacity:.8}
+body[data-project="treasure"] #treasure-grid .choice-btn[data-cell]{animation:tileEnter .3s both;animation-delay:calc(var(--tile,0)*12ms)}
+@keyframes tileEnter{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
+body[data-project="bmi"]{--cyan:#8ab8ff;--violet:#b3a0ff;--pink:#8ab8ff}
+body[data-project="bmi"] .project-heading .card-icon{background:linear-gradient(145deg,#172943,#111629)}
+body[data-project="bmi"] #game-result{direction:ltr;text-align:center;font:800 clamp(25px,4vw,38px) ui-monospace,monospace;color:#dceaff}
+body[data-project] .choice-btn:disabled{cursor:default}
+@media(max-width:520px){
+ body[data-project="password"] .game-form>.game-buttons:has(#pw-upper){grid-template-columns:1fr}
+ body[data-project="rps"] .game-buttons:has([data-action^="rps-"]){gap:6px}
+ body[data-project="rps"] .game-buttons:has([data-action^="rps-"]) .choice-btn{padding:10px 5px;min-height:68px}
+ body[data-project="adventure"] .game-buttons:has(#story-forest){grid-template-columns:1fr}
+}
