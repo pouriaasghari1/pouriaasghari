@@ -1,0 +1,11 @@
+# build helpers
+tools/__pycache__/
+tools/node_modules/
+node_modules/
+__pycache__/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

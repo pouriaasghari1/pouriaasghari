@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /site-assets-tmp/
+
+Sitemap: https://pouriaasghari1.github.io/pouriaasghari/sitemap.xml
