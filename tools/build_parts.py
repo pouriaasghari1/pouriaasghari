@@ -80,6 +80,36 @@ def faq_block(items, open_first=False):
     return "".join(out)
 
 
+def product_ld(p):
+    """Product + BreadcrumbList structured data for one catalog system."""
+    product = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": p["name"],
+        "description": p["desc"],
+        "url": f"{SITE_URL}/products/{p['slug']}.html",
+        "image": [
+            f"{SITE_URL}/assets/img/{p['image']}.png",
+            f"{SITE_URL}/assets/img/og-image.png",
+        ],
+        "brand": {"@type": "Brand", "name": BRAND},
+        "category": p["short"],
+        "manufacturer": {"@id": SITE_URL + "/#organization"},
+        "audience": {"@type": "BusinessAudience", "name": p["best"]},
+    }
+    breadcrumb = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": "Systems", "item": SITE_URL + "/products.html"},
+            {"@type": "ListItem", "position": 3, "name": p["name"],
+             "item": f"{SITE_URL}/products/{p['slug']}.html"},
+        ],
+    }
+    return site_identity() + jsonld(product) + jsonld(breadcrumb)
+
+
 # =========================================================== products.html
 def build_catalog():
     cards = []
@@ -167,9 +197,31 @@ def build_catalog():
 {cta_band('', 'Need something the catalog does not cover?', 'Custom work is the other half of the studio: messy-data cleanups, multi-company consolidation, bespoke pricing logic, VBA tools and one-off automation jobs.',
           primary=(('contact.html', 'Describe your project'),), secondary=('services.html', 'See custom services'))}
 </main>"""
-    page("products.html", "Excel Systems Catalog — Inventory, Sales, Wholesale, Expenses, Reporting",
+    import json as _json
+    item_list = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Pouria Business Excel systems catalog",
+        "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": p["name"],
+             "url": f"{SITE_URL}/products/{p['slug']}.html"}
+            for i, p in enumerate(PRODUCTS)
+        ],
+    }
+    breadcrumb = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": "Systems", "item": SITE_URL + "/products.html"},
+        ],
+    }
+    catalog_ld = site_identity() + jsonld(item_list) + jsonld(breadcrumb)
+
+    page("products.html", "Excel Systems Catalog | Pouria Business",
          "Five professional Excel automation systems for small businesses: inventory control, sales performance, wholesale purchase orders, expense budgets and executive reporting.",
-         body, base="", active="products", canonical=SITE_URL + "/products.html")
+         body, base="", active="products", canonical=SITE_URL + "/products.html",
+         structured=catalog_ld)
 
 
 # =========================================================== product pages
@@ -338,9 +390,10 @@ def build_product(p):
 </div>"""
 
     page(f"products/{p['slug']}.html",
-         f"{p['name']} — Excel system for {p['best_title']} | Pouria Business",
-         p['tagline'] + ' ' + p['desc'],
-         body, base="../", active="products", canonical=f"{SITE_URL}/products/{p['slug']}.html")
+         f"{p['name']} | Excel System — Pouria Business",
+         p['desc'],
+         body, base="../", active="products", canonical=f"{SITE_URL}/products/{p['slug']}.html",
+         structured=product_ld(p))
 
 
 # =========================================================== demo.html
@@ -455,7 +508,7 @@ def build_demo():
 .demo-disclaimer{margin-top:16px;font-size:11.5px;color:var(--faint);line-height:1.6}
 </style>"""
 
-    page("demo.html", "Live Product Demonstrations — Excel Automation Logic | Pouria Business",
+    page("demo.html", "Live Excel Automation Demos | Pouria Business",
          "Interactive demonstrations of the Pouria Business inventory, sales, wholesale, expense and reporting systems. Real calculation logic running on sample data in your browser.",
          body, base="", active="", extra_head=extra,
          canonical=SITE_URL + "/demo.html")

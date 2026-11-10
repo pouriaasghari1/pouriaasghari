@@ -74,8 +74,40 @@ official Telegram handle, and no username is invented. To enable it, set `TELEGR
 row all render automatically.
 
 ```python
-TELEGRAM = "https://t.me/your_real_handle"   # tools/tpl.py
+TELEGRAM = "https://t.me/<handle>"   # tools/tpl.py — set only when the owner supplies one
 ```
+
+## Search appearance (SEO)
+
+Everything Google needs to show the site correctly is generated from `tools/tpl.py`
+(`head()`, `site_identity()`) — do not hand-edit the `<head>` of generated pages.
+
+| Item | Source | Value |
+| --- | --- | --- |
+| Search title (home) | `SITE_TITLE` | `Pouria Business | Excel Automation & Business Solutions` |
+| Meta description (home) | `SITE_DESCRIPTION` | the 159-character description in `tools/tpl.py` |
+| Site name | `WebSite` JSON-LD `name`, `og:site_name` | `Pouria Business` |
+| Founder | `Person` JSON-LD | `Pouria Asghari` |
+| Canonical / OG URL | `SITE_URL` | `https://pouriaasghari1.github.io/pouriaasghari/` |
+
+**Favicon.** `favicon.ico` (16/32/48 multi-size) plus `assets/img/favicon-{16,32,48,96,180,192,512}.png`
+and `assets/img/apple-touch-icon.png` are all square crops of the owner's profile photo
+(`pouria.jpg`). Google requires a square, crawlable icon at a stable URL; to regenerate after
+replacing the photo, re-crop and re-export the same sizes.
+
+**Structured data.** Every page carries `Organization`, `WebSite` and `Person`; the catalog adds
+`ItemList` + `BreadcrumbList`, product pages add `Product` + `BreadcrumbList`, the FAQ page adds
+`FAQPage`, and the contact page adds `ContactPage`. No addresses, phone numbers, ratings or
+customer counts are declared anywhere — only verifiable facts.
+
+**Crawling.** `robots.txt` allows everything and points at `sitemap.xml`, which lists the 13
+business pages. `site.webmanifest` supplies the PWA name and icons. The 404 page is
+`noindex,follow` by design.
+
+**After publishing,** changed titles, descriptions, favicons and site names only show up once
+Google recrawls. Use Search Console → URL Inspection → *Request Indexing* for the homepage to
+speed it up; favicon and site-name changes typically take days to a few weeks and Google may
+still choose its own thumbnail.
 
 ## Publishing
 
