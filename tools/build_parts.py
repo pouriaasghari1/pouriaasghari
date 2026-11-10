@@ -338,7 +338,7 @@ def build_product(p):
 </div>"""
 
     page(f"products/{p['slug']}.html",
-         f"{p['name']} — Excel System for {p['best']} | Gridline Systems",
+         f"{p['name']} — Excel system for {p['best_title']} | Gridline Systems",
          p['tagline'] + ' ' + p['desc'],
          body, base="../", active="products", canonical=f"{SITE_URL}/products/{p['slug']}.html")
 
