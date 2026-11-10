@@ -47,8 +47,8 @@ hero = f"""<main id="main">
     <span class="line">while you sleep.</span>
    </h1>
    <p class="hero__lede reveal" data-d="2">
-    I design and build <strong>professional Excel automation systems</strong> for small businesses,
-    retailers and wholesalers — inventory, sales, wholesale orders, expenses and reporting.
+    <strong>Pouria Business</strong> designs and builds <strong>professional Excel automation systems</strong>
+    for small businesses, retailers and wholesalers — inventory, sales, wholesale orders, expenses and reporting.
     Real workbooks, real formulas, no subscriptions and no cloud lock-in.
    </p>
    <div class="hero__cta reveal" data-d="3">
@@ -60,10 +60,20 @@ hero = f"""<main id="main">
     <span>{ico('check', sw=2.2)} Custom builds from €290</span>
     <span>{ico('check', sw=2.2)} You own the file, forever</span>
    </div>
+   <div class="hero__contact reveal" data-d="5">
+    <a class="hero__contact-link" href="{INSTAGRAM}" target="_blank" rel="noopener noreferrer">
+     <span class="icon icon--sm">{ico('instagram', sw=1.9)}</span>
+     <span><strong>Instagram</strong><small>{INSTAGRAM_HANDLE}</small></span>
+    </a>
+    <a class="hero__contact-link" href="mailto:{EMAIL}">
+     <span class="icon icon--sm">{ico('mail', sw=1.9)}</span>
+     <span><strong>Email</strong><small>{EMAIL}</small></span>
+    </a>
+   </div>
   </div>
   <div class="hero__stage reveal" data-d="2">
    <div class="hero__frame">
-    <div class="hero__chrome"><i></i><i></i><i></i><span>Gridline · executive overview</span></div>
+    <div class="hero__chrome"><i></i><i></i><i></i><span>Pouria Business · executive overview</span></div>
     {picture('dash-hero', 'Original mockup of a consolidated Excel executive dashboard with revenue, inventory, wholesale and expense widgets', '', w=1560, h=1040, priority=True)}
    </div>
    <div class="float-card float-card--a">
@@ -266,19 +276,20 @@ hero = f"""<main id="main">
   <div class="grid grid--2" style="gap:clamp(28px,5vw,60px);align-items:center">
    <div class="reveal">
     <div class="portrait-wrap">
-     <img src="pouria.jpg" alt="Portrait of Pouria Asghari, founder of Gridline Systems" width="620" height="620" loading="lazy" decoding="async" style="border-radius:24px">
+     <img src="pouria.jpg" alt="Portrait of the founder of Pouria Business" width="620" height="620" loading="lazy" decoding="async" style="border-radius:24px">
      <div class="portrait-tag">
       <span class="float-card__dot"></span>
-      <span><strong>Pouria Asghari</strong><small>Founder · Excel systems developer</small></span>
+      <span><strong>Pouria Asghari</strong><small>Founder · Pouria Business</small></span>
      </div>
     </div>
    </div>
    <div>
     <div class="kicker-row reveal"><span>05 — About</span><span class="rule"></span></div>
-    <h2 style="font-size:clamp(28px,3.8vw,44px);margin-top:16px">One person, one speciality: making Excel do the work.</h2>
+    <h2 style="font-size:clamp(28px,3.8vw,44px);margin-top:16px">Pouria Business: one person, one speciality — making Excel do the work.</h2>
     <p class="reveal" data-d="2" style="color:var(--muted);margin-top:16px;max-width:56ch">
-     I am Pouria Asghari. I build Excel automation systems for small businesses — the kind of company
-     where the owner is also the buyer, the accountant and the IT department. Everything I ship is
+     <strong>Pouria Business</strong> is a one-person Excel automation studio. I build systems for small
+     businesses — the kind of company where the owner is also the buyer, the accountant and the IT
+     department — and every build is handled by me personally, start to finish. Everything I ship is
      built to be opened by a tired person on a Friday afternoon and still make sense.
     </p>
     <p class="reveal" data-d="3" style="color:var(--muted);margin-top:12px;max-width:56ch">
@@ -348,11 +359,12 @@ hero = f"""<main id="main">
      </p>
      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px">
       <a class="btn btn--primary" href="contact.html">Send a project brief {ico('send', sw=2)}</a>
+      <a class="btn btn--ghost" href="{INSTAGRAM}" target="_blank" rel="noopener noreferrer">{ico('instagram', sw=2)} Instagram</a>
       <a class="btn btn--ghost" href="mailto:{EMAIL}">{ico('mail', sw=2)} {EMAIL}</a>
      </div>
     </div>
     <div class="grid" style="gap:12px">
-     <div class="mini"><span class="icon icon--sm">{ico('clock')}</span><div><h4>Reply within one working day</h4><p>Usually much faster on Telegram.</p></div></div>
+     <div class="mini"><span class="icon icon--sm">{ico('clock')}</span><div><h4>Reply within one working day</h4><p>Direct messages on Instagram are usually fastest.</p></div></div>
      <div class="mini"><span class="icon icon--sm">{ico('globe')}</span><div><h4>Working in English &amp; Persian</h4><p>Remote delivery, files shared over email or OneDrive.</p></div></div>
      <div class="mini"><span class="icon icon--sm">{ico('lock')}</span><div><h4>Your data stays yours</h4><p>Sample files are deleted after the project unless you ask me to keep them.</p></div></div>
     </div>
@@ -364,6 +376,12 @@ hero = f"""<main id="main">
 """
 
 extra = """<style>
+.hero__contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.hero__contact-link{display:flex;align-items:center;gap:10px;padding:9px 14px 9px 10px;border-radius:12px;
+ border:1px solid var(--line);background:rgba(255,255,255,.022);transition:.25s var(--ease)}
+.hero__contact-link:hover{border-color:rgba(52,224,161,.34);background:rgba(52,224,161,.06);transform:translateY(-2px)}
+.hero__contact-link strong{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700}
+.hero__contact-link small{display:block;font-size:12.5px;color:var(--text);margin-top:2px}
 .portrait-wrap{position:relative;border-radius:26px;padding:10px;background:linear-gradient(160deg,rgba(52,224,161,.22),transparent 55%),var(--surface);border:1px solid var(--line)}
 .portrait-wrap img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;filter:saturate(.92) contrast(1.03)}
 .portrait-tag{position:absolute;left:24px;bottom:24px;display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;
@@ -385,6 +403,6 @@ extra = """<style>
 </style>"""
 
 page("index.html",
-     "Gridline Systems — Professional Excel Automation for Small Business",
-     "Custom Excel automation systems for small businesses, retailers and wholesalers: inventory, sales, wholesale orders, expenses and reporting. Built by Pouria Asghari.",
+     "Pouria Business — Professional Excel Automation for Small Business",
+     "Pouria Business builds custom Excel automation systems for small businesses, retailers and wholesalers: inventory, sales, wholesale orders, expenses and reporting.",
      hero, base="", active="home", extra_head=extra, canonical=SITE_URL + "/")

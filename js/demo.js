@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Gridline Systems — Product Demonstrations
+   Pouria Business — Product Demonstrations
    Working in-browser simulations of the catalog systems, running on clearly
    labelled sample data. Nothing here is a live business figure.
    ========================================================================== */
@@ -274,7 +274,7 @@
     });
     var titleEl = document.querySelector('[data-demo-title]');
     if (titleEl) titleEl.textContent = demo.kicker;
-    document.title = demo.kicker + ' — Live demonstration · Gridline Systems';
+    document.title = demo.kicker + ' — Live demonstration · Pouria Business';
   }
 
   function visible() {

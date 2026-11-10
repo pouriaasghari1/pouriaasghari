@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Gridline Systems — site behaviour
+   Pouria Business — site behaviour
    Vanilla JS, no dependencies. Progressive enhancement only.
    ========================================================================== */
 (function () {
@@ -179,7 +179,7 @@
     el.addEventListener('click', function (e) {
       e.preventDefault();
       var id = el.dataset.demoLink;
-      try { sessionStorage.setItem('gridline:demo', id); } catch (err) {}
+      try { sessionStorage.setItem('pouriabusiness:demo', id); } catch (err) {}
       window.location.href = (el.dataset.demoRoot || '') + 'demo.html#' + id;
     });
   });
@@ -194,14 +194,14 @@
       var to = form.dataset.mailto;
       var data = new FormData(form);
       var lines = [];
-      var subject = form.dataset.subject || 'Project enquiry — Gridline Systems';
+      var subject = form.dataset.subject || 'Project enquiry — Pouria Business';
       data.forEach(function (value, key) {
         if (!value) return;
         var label = key.replace(/[-_]/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
         lines.push(label + ': ' + value);
       });
       var body = (form.dataset.intro || 'Hello Pouria,\n\nI would like to discuss an Excel automation project.\n\n') +
-        lines.join('\n') + '\n\n— Sent from the Gridline Systems website';
+        lines.join('\n') + '\n\n— Sent from the Pouria Business website';
       var href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       var status = form.querySelector('.form__status');
       if (status) {
@@ -217,7 +217,7 @@
   doc.querySelectorAll('[data-select-plan]').forEach(function (link) {
     link.addEventListener('click', function () {
       var plan = link.dataset.selectPlan;
-      try { sessionStorage.setItem('gridline:plan', plan); } catch (err) {}
+      try { sessionStorage.setItem('pouriabusiness:plan', plan); } catch (err) {}
       var select = doc.querySelector('#project-type');
       if (select) {
         var opt = Array.prototype.slice.call(select.options).filter(function (o) {
@@ -233,7 +233,7 @@
     var select = doc.querySelector('#project-type');
     if (select) {
       var plan;
-      try { plan = sessionStorage.getItem('gridline:plan'); } catch (err) {}
+      try { plan = sessionStorage.getItem('pouriabusiness:plan'); } catch (err) {}
       if (plan) {
         var opt = Array.prototype.slice.call(select.options).filter(function (o) {
           return o.value.toLowerCase().indexOf(plan.toLowerCase()) > -1;

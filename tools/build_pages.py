@@ -106,7 +106,7 @@ def build_services():
 {cta_band('', 'Send the messy file. I have seen worse.', 'A short description plus a sample export is enough to start. If Excel is the wrong tool for your problem, I will say so in the first reply.',
           primary=(('contact.html', 'Brief me on the project'),), secondary=('pricing.html', 'Pricing and packages'))}
 </main>"""
-    page("services.html", "Custom Excel Development Services | Gridline Systems",
+    page("services.html", "Custom Excel Development Services | Pouria Business",
          "Custom Excel development: bespoke business workbooks, spreadsheet rescue, Power Query data consolidation, automated reporting, VBA automation and pricing tools.",
          body, base="", active="services", canonical=SITE_URL + "/services.html")
 
@@ -204,7 +204,7 @@ def build_pricing():
 .compare .is-feature{{background:rgba(52,224,161,.05);color:var(--text)!important}}
 .compare thead .is-feature{{color:var(--acc)!important}}
 </style>"""
-    page("pricing.html", "Pricing — Excel Automation Systems from €290 | Gridline Systems",
+    page("pricing.html", "Pricing — Excel Automation Systems from €290 | Pouria Business",
          "Transparent one-time pricing for professional Excel automation systems: Starter €290, Business €590, custom builds from €900. No subscriptions.",
          body, base="", active="pricing", canonical=SITE_URL + "/pricing.html")
 
@@ -214,7 +214,7 @@ def build_about():
     body = f"""<main id="main">
 {page_head('<a href="index.html">Home</a><span>/</span><span>About</span>', "About the studio",
            "I build the spreadsheet your business should have had from the start.",
-           "Gridline Systems is a one-person Excel automation studio run by Pouria Asghari, focused on small businesses, retailers and wholesalers who are tired of guessing their own numbers.",
+           "Pouria Business is a one-person Excel automation studio focused on small businesses, retailers and wholesalers who are tired of guessing their own numbers.",
            [])}
 
 <section class="section" style="padding-top:clamp(16px,2vw,26px)">
@@ -222,24 +222,30 @@ def build_about():
   <div class="grid grid--2" style="gap:clamp(30px,5vw,64px);align-items:start">
    <div class="reveal">
     <div style="border-radius:26px;padding:10px;background:linear-gradient(160deg,rgba(52,224,161,.22),transparent 55%),var(--surface);border:1px solid var(--line)">
-     <img src="pouria.jpg" alt="Portrait of Pouria Asghari, founder of Gridline Systems" width="620" height="620" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;filter:saturate(.92) contrast(1.03)">
+     <img src="pouria.jpg" alt="Portrait of the founder of Pouria Business" width="620" height="620" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;filter:saturate(.92) contrast(1.03)">
     </div>
     <div class="panel" style="margin-top:16px">
-     <h3>Pouria Asghari</h3>
-     <p style="margin-top:6px">Founder · Excel systems developer · based in Šiauliai, Lithuania, working remotely.</p>
+     <h3>Pouria Business</h3>
+     <p style="margin-top:6px">An Excel automation studio for small businesses, retailers and wholesalers — working remotely with clients worldwide.</p>
      <dl class="spec" style="margin-top:16px">
+      <div class="spec__row"><dt>Business</dt><dd>Pouria Business</dd></div>
       <div class="spec__row"><dt>Focus</dt><dd>Excel automation for small business</dd></div>
       <div class="spec__row"><dt>Tools</dt><dd>Excel, Power Query, VBA, Python</dd></div>
       <div class="spec__row"><dt>Languages</dt><dd>English, Persian</dd></div>
-      <div class="spec__row"><dt>Contact</dt><dd><a href="mailto:{EMAIL}" style="color:var(--acc)">{EMAIL}</a></dd></div>
+      <div class="spec__row"><dt>Email</dt><dd><a href="mailto:{EMAIL}" style="color:var(--acc)">{EMAIL}</a></dd></div>
+      <div class="spec__row"><dt>Instagram</dt><dd><a href="{INSTAGRAM}" target="_blank" rel="noopener noreferrer" style="color:var(--acc)">{INSTAGRAM_HANDLE}</a></dd></div>
      </dl>
+     <div style="display:flex;gap:9px;margin-top:16px;flex-wrap:wrap">
+      <a class="btn btn--primary btn--sm" href="{INSTAGRAM}" target="_blank" rel="noopener noreferrer">{ico('instagram', sw=1.9)} Follow on Instagram</a>
+      <a class="btn btn--ghost btn--sm" href="mailto:{EMAIL}">{ico('mail', sw=1.9)} Email</a>
+     </div>
     </div>
    </div>
    <div>
     <div class="kicker-row reveal"><span>Why this exists</span><span class="rule"></span></div>
     <h2 style="font-size:clamp(26px,3.6vw,40px);margin-top:16px">Small businesses do not need another platform. They need one file that works.</h2>
     <div class="reveal" data-d="2" style="color:var(--muted);margin-top:16px;display:grid;gap:14px;max-width:60ch">
-     <p>Most of the businesses I talk to already own the right tool. Excel is installed, the staff know it, and the data is already there. What is missing is structure: a data model that holds up, formulas that cannot quietly break, and reporting that builds itself.</p>
+     <p><strong>Pouria Business</strong> is a one-person studio: you deal with the person who builds the file, not a department. Most of the businesses I talk to already own the right tool. Excel is installed, the staff know it, and the data is already there. What is missing is structure: a data model that holds up, formulas that cannot quietly break, and reporting that builds itself.</p>
      <p>So that is what I build. Not a template downloaded from somewhere — a system designed around the way your business actually operates, including the exceptions nobody documents.</p>
      <p>My background is software: Python, logic, interactive tools. That background is why the workbooks I ship avoid the usual Excel traps — copy-pasted formulas, hard-coded months, five versions of the same sheet, and numbers nobody can trace back to a source.</p>
     </div>
@@ -284,8 +290,8 @@ def build_about():
 {cta_band('', 'Tell me about the spreadsheet you dread opening.', 'A short message is enough to start. You will get a straight answer about what is possible, what it costs, and how long it takes.',
           primary=(('contact.html', 'Contact the studio'),), secondary=('portfolio.html', 'Personal portfolio'))}
 </main>"""
-    page("about.html", "About — Excel Automation Studio by Pouria Asghari | Gridline Systems",
-         "Gridline Systems is a one-person Excel automation studio by Pouria Asghari, building professional Excel systems for small businesses, retailers and wholesalers.",
+    page("about.html", "About — Excel Automation Studio | Pouria Business",
+         "Pouria Business is a one-person Excel automation studio building professional Excel systems for small businesses, retailers and wholesalers.",
          body, base="", active="about", canonical=SITE_URL + "/about.html")
 
 
@@ -352,14 +358,18 @@ def build_faq():
 .faq-layout{{display:grid;gap:clamp(26px,4vw,44px);max-width:900px}}
 .faq-group__title{{font-size:13px;font-family:var(--font-b);font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}}
 </style>"""
-    page("faq.html", "FAQ — Excel Automation Systems | Gridline Systems",
-         "Frequently asked questions about Gridline Systems Excel automation: file format, Excel versions, delivery times, data privacy and post-handover support.",
+    page("faq.html", "FAQ — Excel Automation Systems | Pouria Business",
+         "Frequently asked questions about Pouria Business Excel automation: file format, Excel versions, delivery times, data privacy and post-handover support.",
          body, base="", active="", canonical=SITE_URL + "/faq.html")
 
 
 # =========================================================== contact.html
 def build_contact():
-    form = f"""<form class="form" data-mailto="{EMAIL}" data-subject="Project enquiry — Gridline Systems website"
+    # Telegram is only rendered once the real handle/link exists.
+    telegram_line = (f'<a class="contact-line" href="{TELEGRAM}" target="_blank" rel="noopener noreferrer">'
+                     f'<span class="icon icon--sm">{ico("send")}</span>'
+                     f'<span><strong>Telegram</strong><small>Direct message</small></span></a>') if TELEGRAM else ""
+    form = f"""<form class="form" data-mailto="{EMAIL}" data-subject="Project enquiry — Pouria Business website"
    data-intro="Hello Pouria,&#10;&#10;I would like to discuss an Excel automation project.&#10;&#10;">
  <div class="field--row">
   <div class="field"><label for="name">Your name</label><input id="name" name="Name" type="text" autocomplete="name" required placeholder="Jane Doe"></div>
@@ -435,8 +445,8 @@ def build_contact():
      <h3>Direct channels</h3>
      <div style="display:grid;gap:10px;margin-top:14px">
       <a class="contact-line" href="mailto:{EMAIL}"><span class="icon icon--sm">{ico('mail')}</span><span><strong>Email</strong><small>{EMAIL}</small></span></a>
-      <a class="contact-line" href="{TELEGRAM}" target="_blank" rel="noopener noreferrer"><span class="icon icon--sm">{ico('send')}</span><span><strong>Telegram</strong><small>@pouriaasghari_1 · fastest reply</small></span></a>
-      <a class="contact-line" href="{GITHUB}" target="_blank" rel="noopener noreferrer"><span class="icon icon--sm">{ico('code')}</span><span><strong>GitHub</strong><small>github.com/pouriaasghari1</small></span></a>
+      <a class="contact-line" href="{INSTAGRAM}" target="_blank" rel="noopener noreferrer"><span class="icon icon--sm">{ico('instagram')}</span><span><strong>Instagram</strong><small>{INSTAGRAM_HANDLE} · direct messages</small></span></a>
+      {telegram_line}
       <button class="contact-line" type="button" data-copy="{EMAIL}"><span class="icon icon--sm">{ico('file')}</span><span><strong>Copy email address</strong><small>Click to copy</small></span></button>
      </div>
     </div>
@@ -488,8 +498,8 @@ def build_contact():
 .steps-mini p{font-size:13px;color:var(--muted);line-height:1.55}
 </style>"""
 
-    page("contact.html", "Contact — Start an Excel Automation Project | Gridline Systems",
-         "Contact Gridline Systems to discuss a custom Excel automation project. Personal reply within one working day, in English or Persian.",
+    page("contact.html", "Contact — Start an Excel Automation Project | Pouria Business",
+         "Contact Pouria Business to discuss a custom Excel automation project. Personal reply within one working day, in English or Persian.",
          body, base="", active="contact", extra_head=contact_css, canonical=SITE_URL + "/contact.html")
 
 
