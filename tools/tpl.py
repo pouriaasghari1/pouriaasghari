@@ -69,7 +69,8 @@ PRODUCTS = [
         "price_note": "one-time build · starting from",
         "badge": "Most requested",
         "categories": "retail wholesale",
-        "best": "Retailers & wholesalers with 200–5,000 SKUs",
+        "best": "Retailers &amp; wholesalers with 200–5,000 SKUs",
+        "best_title": "retailers and wholesalers",
         "deliverables": [
             "Stock master sheet with validated SKU entry",
             "Automatic reorder flags against your reorder points",
@@ -111,6 +112,7 @@ PRODUCTS = [
         "badge": "",
         "categories": "retail wholesale",
         "best": "Shops and distributors invoicing from Excel",
+        "best_title": "shops and distributors",
         "deliverables": [
             "Fast order entry with product and price lookup",
             "Automatic revenue, margin and AOV calculation",
@@ -152,6 +154,7 @@ PRODUCTS = [
         "badge": "B2B",
         "categories": "wholesale",
         "best": "Wholesalers and B2B distributors",
+        "best_title": "wholesalers and B2B distributors",
         "deliverables": [
             "Trade account register with agreed price lists",
             "Purchase order pipeline with status flow",
@@ -193,6 +196,7 @@ PRODUCTS = [
         "badge": "",
         "categories": "retail wholesale",
         "best": "Small businesses that need cost control",
+        "best_title": "small businesses",
         "deliverables": [
             "Expense log with categories and vendors",
             "Budget vs actual per month and per team",
@@ -234,6 +238,7 @@ PRODUCTS = [
         "badge": "Board-ready",
         "categories": "retail wholesale reporting",
         "best": "Owners who need one honest number",
+        "best_title": "business owners",
         "deliverables": [
             "Consolidation of up to 6 source files or sheets",
             "Executive scorecard with month and quarter views",
