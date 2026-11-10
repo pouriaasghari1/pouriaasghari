@@ -22,11 +22,12 @@ def cta_band(base, title, text, primary=(("contact.html", "Start a project"),), 
 </section>"""
 
 
-def price_cards(base=""):
+def price_cards(base="", note=True):
+    note_html = f'<p class="price-note">{PRICE_NOTE}</p>' if note else ""
     return f"""<div class="price-grid">
  <div class="card price reveal">
   <span class="price__name">Starter system</span>
-  <div><span class="price__amount">€290<span>one-time</span></span></div>
+  <div><span class="price__amount">$325<span>one-time · ≈ €290 EUR</span></span></div>
   <p class="price__desc">One core workbook for a single job — expense control or a clean sales tracker.</p>
   <ul class="price__list">
    <li>{ico('check', sw=2.2)}One catalog system (Expense Control Center)</li>
@@ -41,7 +42,7 @@ def price_cards(base=""):
  <div class="card price price--feature reveal" data-d="1">
   <span class="tag price__badge">Most chosen</span>
   <span class="price__name">Business system</span>
-  <div><span class="price__amount">€590<span>one-time</span></span></div>
+  <div><span class="price__amount">$660<span>one-time · ≈ €590 EUR</span></span></div>
   <p class="price__desc">A full operating system: inventory, sales, wholesale orders or consolidated reporting.</p>
   <ul class="price__list">
    <li>{ico('check', sw=2.2)}Any one catalog system</li>
@@ -55,7 +56,7 @@ def price_cards(base=""):
  </div>
  <div class="card price reveal" data-d="2">
   <span class="price__name">Custom build</span>
-  <div><span class="price__amount">Quoted<span>from €900</span></span></div>
+  <div><span class="price__amount">Quoted<span>from $1,000 · ≈ €895 EUR</span></span></div>
   <p class="price__desc">A system designed from scratch for how your business actually runs.</p>
   <ul class="price__list">
    <li>{ico('check', sw=2.2)}Discovery call + written blueprint</li>
@@ -67,7 +68,8 @@ def price_cards(base=""):
   </ul>
   <div class="price__foot"><a class="btn btn--ghost btn--block" href="{base}contact.html" data-select-plan="Custom">Request a quote {ico('arrow', sw=2)}</a></div>
  </div>
-</div>"""
+</div>
+{note_html}"""
 
 
 def faq_block(items, open_first=False):
@@ -130,7 +132,7 @@ def build_catalog():
    {''.join(f'<li>{ico("check", sw=2.2)}<span style="font-size:12.8px">{d}</span></li>' for d in p['deliverables'][:3])}
   </ul>
   <div class="product-card__foot">
-   <span class="product-card__price">{p['price']}<small>{p['price_note']}</small></span>
+   <span class="product-card__price">{p['price']}<small>{p['price_note']} · ≈ {p['price_eur']} EUR</small></span>
    <a class="product-card__link" href="products/{p['slug']}.html">View system {ico('arrow-up-right', sw=2)}</a>
   </div>
  </div>
@@ -336,9 +338,10 @@ def build_product(p):
      <span class="price__name" style="font-size:11px">Starting price</span>
      <div style="display:flex;align-items:baseline;gap:8px;margin:10px 0 4px">
       <span style="font-family:var(--font-d);font-size:38px;font-weight:600;letter-spacing:-.04em">{p['price']}</span>
+      <span style="font-size:13px;color:var(--faint);margin-left:8px">≈ {p['price_eur']} EUR</span>
       <span class="muted" style="font-size:12px">one-time</span>
      </div>
-     <p class="muted" style="font-size:12.5px">Final price depends on scope. Standard build as listed above: {p['price']}. Customisation is quoted separately.</p>
+     <p class="muted" style="font-size:12.5px">Standard build as listed above: {p['price']} (≈ {p['price_eur']} EUR). The final figure depends on your scope, data and requirements and is confirmed in writing before work starts. Customisation is quoted separately.</p>
      <div style="display:grid;gap:9px;margin-top:18px">
       <a class="btn btn--primary btn--block" href="../contact.html" data-select-plan="Business">Request this system {ico('arrow', sw=2)}</a>
       <a class="btn btn--ghost btn--block" href="../demo.html#{p['demo']}">{ico('play', sw=2)} Try the demo</a>

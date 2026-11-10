@@ -57,7 +57,7 @@ hero = f"""<main id="main">
    </div>
    <div class="hero__meta reveal" data-d="4">
     <span>{ico('check', sw=2.2)} Five ready-made systems</span>
-    <span>{ico('check', sw=2.2)} Custom builds from €290</span>
+    <span>{ico('check', sw=2.2)} Custom builds from $325</span>
     <span>{ico('check', sw=2.2)} You own the file, forever</span>
    </div>
    <div class="hero__contact reveal" data-d="5">
@@ -221,12 +221,12 @@ hero = f"""<main id="main">
     <div class="kicker-row reveal"><span>04 — Pricing</span><span class="rule"></span></div>
     <h2 style="margin-top:16px">Fixed prices. Written scope. No surprises.</h2>
    </div>
-   <p class="reveal" data-d="2">Catalog systems start at €290. Custom work is quoted after the blueprint. Everything is a one-time build — there is no monthly fee to keep using your own file.</p>
+   <p class="reveal" data-d="2">Catalog systems start at $325 (≈ €290 EUR). Custom work is quoted after the blueprint. Everything is a one-time build — there is no monthly fee to keep using your own file. The final figure depends on your scope, data and requirements, and is confirmed in writing before any work starts.</p>
   </div>
   <div class="price-grid">
    <div class="card price reveal">
     <span class="price__name">Starter system</span>
-    <div><span class="price__amount">€290<span>one-time</span></span></div>
+    <div><span class="price__amount">$325<span>one-time · ≈ €290 EUR</span></span></div>
     <p class="price__desc">One core workbook for a single job — expenses or a clean sales tracker.</p>
     <ul class="price__list">
      <li>{ico('check', sw=2.2)}One catalog system (expenses)</li>
@@ -240,7 +240,7 @@ hero = f"""<main id="main">
    <div class="card price price--feature reveal" data-d="1">
     <span class="tag price__badge">Most chosen</span>
     <span class="price__name">Business system</span>
-    <div><span class="price__amount">€590<span>one-time</span></span></div>
+    <div><span class="price__amount">$660<span>one-time · ≈ €590 EUR</span></span></div>
     <p class="price__desc">A full operating system: inventory, sales or wholesale orders, connected and automated.</p>
     <ul class="price__list">
      <li>{ico('check', sw=2.2)}Any catalog system (inventory, sales, wholesale, reporting)</li>
@@ -254,7 +254,7 @@ hero = f"""<main id="main">
    </div>
    <div class="card price reveal" data-d="2">
     <span class="price__name">Custom build</span>
-    <div><span class="price__amount">Quoted<span>from €900</span></span></div>
+    <div><span class="price__amount">Quoted<span>from $1,000 · ≈ €895 EUR</span></span></div>
     <p class="price__desc">Something your business needs that no catalog system covers — designed from scratch.</p>
     <ul class="price__list">
      <li>{ico('check', sw=2.2)}Discovery + written blueprint</li>
@@ -266,7 +266,7 @@ hero = f"""<main id="main">
     <div class="price__foot"><a class="btn btn--ghost btn--block" href="pricing.html" data-select-plan="Custom">Request a quote</a></div>
    </div>
   </div>
-  <p class="price__note" style="margin-top:20px">Prices in EUR, excluding VAT where applicable. Payment in two parts: 50% to start, 50% on handover.</p>
+  <p class="price__note" style="margin-top:20px">Prices in USD, with EUR shown for reference at ≈ €1 = $1.12. Excluding VAT where applicable. Payment in two parts: 50% to start, 50% on handover. The final quote is confirmed in writing and depends on your scope, data and requirements.</p>
  </div>
 </section>
 

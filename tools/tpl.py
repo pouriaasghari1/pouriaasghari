@@ -6,6 +6,48 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BRAND = "Pouria Business"
 BRAND_SHORT = "POURIA"
 BRAND_TAG = "BUSINESS"
+# --------------------------------------------------------------------------
+# pricing
+# --------------------------------------------------------------------------
+# Catalogue prices were set in EUR. They are presented in USD (the primary
+# currency) with the original EUR figure kept as a reference, converted at a
+# fixed published rate so the two never drift apart between pages.
+EUR_USD = 1.12          # reference rate used for the displayed conversions
+PRICES_AS_OF = "November 2026"
+
+# EUR reference for every headline figure, keyed by the USD amount.
+EUR_REF = {
+    "290": "€260",
+    "325": "€290",
+    "340": "€305",
+    "390": "€350",
+    "435": "€390",
+    "490": "€435",
+    "590": "€525",
+    "655": "€585",
+    "660": "€590",
+    "900": "€800",
+    "1000": "€895",
+    "1500": "€1340",
+}
+
+
+def usd(amount, prefix=""):
+    """Format a USD figure, e.g. usd(325) -> '$325'."""
+    return f"{prefix}${amount:,}"
+
+
+def ref(amount):
+    """EUR reference for a USD figure, e.g. ref(325) -> '(≈ €290)'."""
+    eur = EUR_REF.get(str(amount))
+    return f" (≈ {eur})" if eur else ""
+
+
+# Conversion note rendered under every price block.
+PRICE_NOTE = (f"Prices in USD. EUR shown for reference at ≈ €1 = ${EUR_USD:.2f} "
+              f"({PRICES_AS_OF}). Final quote is confirmed in writing before any work starts — "
+              f"the exact figure depends on your scope, data and requirements.")
+
 SITE_TITLE = "Pouria Business | Excel Automation & Business Solutions"
 SITE_DESCRIPTION = ("Pouria Business by Pouria Asghari provides smart Excel automation solutions for sales "
                     "management, inventory tracking, business reporting, and order management.")
@@ -14,7 +56,8 @@ EMAIL = "pouriabusines1@gmail.com"
 INSTAGRAM = "https://www.instagram.com/pouria_busines/"
 INSTAGRAM_HANDLE = "@pouria_busines"
 # Telegram is intentionally empty until the owner supplies the real handle.
-TELEGRAM = ""
+TELEGRAM = "https://t.me/pouria_busines"
+TELEGRAM_HANDLE = "@pouria_busines"
 GITHUB = "https://github.com/pouriaasghari1"
 
 # --------------------------------------------------------------------------
@@ -75,7 +118,8 @@ PRODUCTS = [
         "desc": "Excel inventory system with live reorder alerts, stock valuation and supplier lead times — so you know exactly what to reorder.",
         "icon": "box",
         "image": "dash-inventory",
-        "price": "€390",
+        "price": "$435",
+        "price_eur": "€390",
         "price_note": "one-time build · starting from",
         "badge": "Most requested",
         "categories": "retail wholesale",
@@ -117,7 +161,8 @@ PRODUCTS = [
         "desc": "Excel sales system that turns order entry into revenue, margin and channel dashboards — no manual reporting.",
         "icon": "cart",
         "image": "dash-sales",
-        "price": "€390",
+        "price": "$435",
+        "price_eur": "€390",
         "price_note": "one-time build · starting from",
         "badge": "",
         "categories": "retail wholesale",
@@ -159,7 +204,8 @@ PRODUCTS = [
         "desc": "Excel wholesale system for purchase orders, trade accounts, fill rates, receivables and delivery schedules in one workbook.",
         "icon": "truck",
         "image": "dash-wholesale",
-        "price": "€590",
+        "price": "$660",
+        "price_eur": "€590",
         "price_note": "one-time build · starting from",
         "badge": "B2B",
         "categories": "wholesale",
@@ -201,7 +247,8 @@ PRODUCTS = [
         "desc": "Excel expense system with approvals, budget-versus-actual by team and a month-end close that takes minutes.",
         "icon": "card",
         "image": "dash-expenses",
-        "price": "€290",
+        "price": "$325",
+        "price_eur": "€290",
         "price_note": "one-time build · starting from",
         "badge": "",
         "categories": "retail wholesale",
@@ -243,7 +290,8 @@ PRODUCTS = [
         "desc": "Excel reporting system that consolidates your data into a one-page scorecard and a print-ready board pack.",
         "icon": "chart",
         "image": "dash-reporting",
-        "price": "€490",
+        "price": "$545",
+        "price_eur": "€490",
         "price_note": "one-time build · starting from",
         "badge": "Board-ready",
         "categories": "retail wholesale reporting",
@@ -313,7 +361,7 @@ def site_identity():
         "image": SITE_URL + "/assets/img/og-image.png",
         "founder": {"@id": SITE_URL + "/#person"},
         "employee": {"@id": SITE_URL + "/#person"},
-        "sameAs": [INSTAGRAM, GITHUB],
+        "sameAs": [INSTAGRAM, TELEGRAM, GITHUB],
         "knowsAbout": [
             "Excel automation",
             "Inventory management",
@@ -349,8 +397,8 @@ def site_identity():
         "worksFor": {"@id": SITE_URL + "/#organization"},
         "email": "mailto:" + EMAIL,
         "url": SITE_URL + "/about.html",
-        "image": SITE_URL + "/assets/img/favicon-512.png",
-        "sameAs": [INSTAGRAM, GITHUB],
+        "image": SITE_URL + "/pouria.jpg",
+        "sameAs": [INSTAGRAM, TELEGRAM, GITHUB],
     }
     return jsonld(org, website, person)
 
@@ -486,9 +534,10 @@ def nav(base="", active=""):
 def footer(base=""):
     # Telegram stays hidden until the owner supplies the real handle/link.
     telegram_social = (f'<a href="{TELEGRAM}" target="_blank" rel="noopener noreferrer" '
-                       f'aria-label="Telegram" title="Telegram">{ico("send", sw=1.8)}</a>') if TELEGRAM else ""
-    telegram_link = (f'<li><a href="{TELEGRAM}" target="_blank" rel="noopener noreferrer">Telegram</a></li>'
-                     if TELEGRAM else "")
+                       f'aria-label="Telegram {TELEGRAM_HANDLE}" title="Telegram {TELEGRAM_HANDLE}">'
+                       f'{ico("send", sw=1.8)}</a>') if TELEGRAM else ""
+    telegram_link = (f'<li><a href="{TELEGRAM}" target="_blank" rel="noopener noreferrer">'
+                     f'Telegram {TELEGRAM_HANDLE}</a></li>') if TELEGRAM else ""
     links = "".join(
         f'<li><a href="{base}products/{p["slug"]}.html">{p["short"]}</a></li>' for p in PRODUCTS
     )
@@ -500,7 +549,15 @@ def footer(base=""):
      <img class="brand__mark" src="{base}assets/logo.svg" alt="{BRAND} logo" width="36" height="36">
      <span class="brand__text"><span class="brand__name">{BRAND}</span><span class="brand__tag">EXCEL AUTOMATION</span></span>
     </a>
-    <p>Professional Excel automation systems for small businesses, retailers and wholesalers. Founded and run by Pouria Asghari.</p>
+    <p>Professional Excel automation systems for small businesses, retailers and wholesalers.</p>
+    <div class="owner">
+     <img class="owner__photo" src="{base}pouria.jpg" alt="Pouria Asghari, founder of Pouria Business" width="120" height="120" loading="lazy" decoding="async">
+     <div class="owner__text">
+      <strong>Pouria Asghari</strong>
+      <span>Founder &amp; owner · {BRAND}</span>
+      <em>These Instagram, Telegram and email accounts are the official channels of this site.</em>
+     </div>
+    </div>
     <div class="social" style="margin-top:18px">
      <a href="{INSTAGRAM}" target="_blank" rel="noopener noreferrer" aria-label="Instagram {INSTAGRAM_HANDLE}" title="Instagram {INSTAGRAM_HANDLE}">{ico('instagram', sw=1.8)}</a>
      <a href="mailto:{EMAIL}" aria-label="Email {BRAND}" title="{EMAIL}">{ico('mail', sw=1.8)}</a>
