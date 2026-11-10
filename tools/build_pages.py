@@ -473,7 +473,7 @@ def build_contact():
 
     <div class="panel reveal" data-d="4" style="background:radial-gradient(120% 130% at 0% 0%,rgba(52,224,161,.1),transparent 60%),var(--surface)">
      <h3>Booking a call</h3>
-     <p>Calls are arranged by email or Telegram — no calendar widget, no booking platform. Send your time zone and two windows that suit you.</p>
+     <p>Calls are arranged by email or Instagram DM — no calendar widget, no booking platform. Send your time zone and two windows that suit you.</p>
      <a class="btn btn--ghost btn--block" style="margin-top:14px" href="mailto:{EMAIL}?subject=Walkthrough%20call%20request">Request a call slot</a>
     </div>
    </div>
