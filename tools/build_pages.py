@@ -124,7 +124,7 @@ def build_pricing():
         ("Recorded walkthrough", "—", "Yes", "Yes"),
         ("Support after handover", "14 days", "30 days", "60 days"),
         ("Delivery time", "5–7 days", "5–10 days", "2–4 weeks"),
-        ("Price", "€290", "€590", "from €900"),
+        ("Price", "$325 (≈ €290)", "$660 (≈ €590)", "from $1,000 (≈ €895)"),
     ]
     rows = "".join(f"""<tr>
  <td>{a}</td><td>{b}</td><td class="is-feature">{c}</td><td>{d}</td></tr>""" for a, b, c, d in compare)
@@ -151,7 +151,7 @@ def build_pricing():
   <div class="card reveal" style="padding:0;overflow:hidden">
    <div style="overflow-x:auto">
     <table class="compare">
-     <thead><tr><th scope="col">Included</th><th scope="col">Starter · €290</th><th scope="col" class="is-feature">Business · €590</th><th scope="col">Custom · from €900</th></tr></thead>
+     <thead><tr><th scope="col">Included</th><th scope="col">Starter · $325</th><th scope="col" class="is-feature">Business · $660</th><th scope="col">Custom · from $1,000</th></tr></thead>
      <tbody>{rows}</tbody>
     </table>
    </div>
@@ -167,10 +167,10 @@ def build_pricing():
     <h2 style="font-size:clamp(26px,3.4vw,38px);margin-top:16px">Optional extras.</h2>
     <p class="reveal" data-d="2" style="color:var(--muted);margin-top:14px;max-width:52ch">Only when they are genuinely useful. Nothing is bundled to inflate the invoice.</p>
     <div class="grid" style="gap:12px;margin-top:24px">
-     <div class="mini"><span class="icon icon--sm">{ico('refresh')}</span><div><h4>Second system integration <span class="acc">+€150</span></h4><p>Link two catalog systems so sales update stock automatically.</p></div></div>
-     <div class="mini"><span class="icon icon--sm">{ico('users')}</span><div><h4>Multi-user layout <span class="acc">+€120</span></h4><p>Split entry and reporting for OneDrive/SharePoint co-authoring.</p></div></div>
-     <div class="mini"><span class="icon icon--sm">{ico('database')}</span><div><h4>Data migration <span class="acc">from €90</span></h4><p>Clean and import existing history, with a reconciliation sheet.</p></div></div>
-     <div class="mini"><span class="icon icon--sm">{ico('clock')}</span><div><h4>Extended support <span class="acc">€60 / month</span></h4><p>Optional, cancellable any time. Fixes, small changes and a quarterly review.</p></div></div>
+     <div class="mini"><span class="icon icon--sm">{ico('refresh')}</span><div><h4>Second system integration <span class="acc">+$170 (≈ €150)</span></h4><p>Link two catalog systems so sales update stock automatically.</p></div></div>
+     <div class="mini"><span class="icon icon--sm">{ico('users')}</span><div><h4>Multi-user layout <span class="acc">+$135 (≈ €120)</span></h4><p>Split entry and reporting for OneDrive/SharePoint co-authoring.</p></div></div>
+     <div class="mini"><span class="icon icon--sm">{ico('database')}</span><div><h4>Data migration <span class="acc">from $100 (≈ €90)</span></h4><p>Clean and import existing history, with a reconciliation sheet.</p></div></div>
+     <div class="mini"><span class="icon icon--sm">{ico('clock')}</span><div><h4>Extended support <span class="acc">$65 / month (≈ €60)</span></h4><p>Optional, cancellable any time. Fixes, small changes and a quarterly review.</p></div></div>
     </div>
    </div>
    <div>
@@ -178,11 +178,11 @@ def build_pricing():
     <h2 style="font-size:clamp(26px,3.4vw,38px);margin-top:16px">How payment works.</h2>
     <div style="margin-top:22px">
      {faq_block([
-        ("When do I pay?", "50% when you approve the written blueprint, 50% on handover. Custom builds over €1,500 can be split into three payments."),
+        ("When do I pay?", "50% when you approve the written blueprint, 50% on handover. Custom builds over $1,500 can be split into three payments."),
         ("What payment methods?", "Bank transfer (SEPA) or a payment link. An invoice is issued for every payment."),
-        ("What if I need changes later?", "Small adjustments are quoted as separate mini-jobs. Extended support (€60/month) covers fixes and small changes without a new quote each time."),
+        ("What if I need changes later?", "Small adjustments are quoted as separate mini-jobs. Extended support ($65/month, ≈ €60) covers fixes and small changes without a new quote each time."),
         ("Is there a refund policy?", "If the delivered workbook does not match the approved blueprint, I fix it. Beyond that, custom work is not refundable once the build starts — which is why the blueprint step exists."),
-        ("Do you work with businesses outside the EU?", "Yes. Prices stay in EUR; payment links handle most currencies."),
+        ("Do you work with businesses outside the EU?", "Yes. Prices are quoted in USD with a EUR reference; payment links handle most currencies."),
      ], open_first=True)}
     </div>
    </div>
@@ -204,8 +204,8 @@ def build_pricing():
 .compare .is-feature{{background:rgba(52,224,161,.05);color:var(--text)!important}}
 .compare thead .is-feature{{color:var(--acc)!important}}
 </style>"""
-    page("pricing.html", "Pricing — Excel Automation Systems from €290 | Pouria Business",
-         "Transparent one-time pricing for professional Excel automation systems: Starter €290, Business €590, custom builds from €900. No subscriptions.",
+    page("pricing.html", "Pricing — Excel Automation Systems from $325 | Pouria Business",
+         "Transparent one-time pricing for professional Excel automation systems: Starter $325, Business $660, custom builds from $1,000. No subscriptions.",
          body, base="", active="pricing", canonical=SITE_URL + "/pricing.html")
 
 
@@ -326,7 +326,7 @@ def build_faq():
             ("Is the workbook secure?", "Sheets are protected and inputs validated to prevent accidental damage. That is protection against mistakes, not against a determined person — no Excel file is encrypted unless you set a password, which I recommend."),
         ]),
         ("After handover", [
-            ("What if a formula breaks later?", "Every build includes a support window (14–60 days depending on the package). After that, small fixes are quoted as mini-jobs, or covered by optional support at €60/month."),
+            ("What if a formula breaks later?", "Every build includes a support window (14–60 days depending on the package). After that, small fixes are quoted as mini-jobs, or covered by optional support at $65/month (≈ €60)."),
             ("Can I edit it myself?", "Yes — it is your file. The structure is documented so you can add products, categories or users without breaking anything. Larger structural changes are best done together."),
             ("Do you keep working with the business after delivery?", "Only if you want to. Many clients come back for a second system six months later; nothing requires it."),
             ("What if I outgrow Excel?", "Then you will need a different tool, and that is a good sign. I will happily tell you when a workbook stops being the right answer — the file stays yours either way."),
@@ -397,10 +397,10 @@ def build_faq():
 
 # =========================================================== contact.html
 def build_contact():
-    # Telegram is only rendered once the real handle/link exists.
+    # Official channels — the same handle on Instagram and Telegram.
     telegram_line = (f'<a class="contact-line" href="{TELEGRAM}" target="_blank" rel="noopener noreferrer">'
                      f'<span class="icon icon--sm">{ico("send")}</span>'
-                     f'<span><strong>Telegram</strong><small>Direct message</small></span></a>') if TELEGRAM else ""
+                     f'<span><strong>Telegram</strong><small>{TELEGRAM_HANDLE} · direct message</small></span></a>') if TELEGRAM else ""
     form = f"""<form class="form" data-mailto="{EMAIL}" data-subject="Project enquiry — Pouria Business website"
    data-intro="Hello Pouria,&#10;&#10;I would like to discuss an Excel automation project.&#10;&#10;">
  <div class="field--row">
@@ -413,9 +413,9 @@ def build_contact():
    <label for="project-type">What do you need?</label>
    <select id="project-type" name="Project type" required>
     <option value="">Choose one…</option>
-    <option value="Starter system (€290)">Starter system — €290</option>
-    <option value="Business system (€590)">Business system — €590</option>
-    <option value="Custom build (from €900)">Custom build — from €900</option>
+    <option value="Starter system ($325)">Starter system — $325 (≈ €290)</option>
+    <option value="Business system ($660)">Business system — $660 (≈ €590)</option>
+    <option value="Custom build (from $1,000)">Custom build — from $1,000 (≈ €895)</option>
     <option value="Inventory system">Inventory system</option>
     <option value="Sales system">Sales system</option>
     <option value="Wholesale system">Wholesale system</option>
@@ -551,7 +551,7 @@ def build_contact():
                 "availableLanguage": ["English", "Persian"],
                 "url": SITE_URL + "/contact.html",
             }],
-            "sameAs": [INSTAGRAM, GITHUB],
+            "sameAs": [INSTAGRAM, TELEGRAM, GITHUB],
         },
     })
 
