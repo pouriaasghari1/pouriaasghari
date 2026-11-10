@@ -1,79 +1,563 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#080b10">
-<meta name="description" content="پورتفولیوی پوریا اصغری؛ پروژه‌های تعاملی و تمرین‌های یادگیری پایتون.">
-<meta name="author" content="Pouria Asghari">
+<meta name="theme-color" content="#050706">
+<title>Gridline Systems — Professional Excel Automation for Small Business</title>
+<meta name="description" content="Custom Excel automation systems for small businesses, retailers and wholesalers: inventory, sales, wholesale orders, expenses and reporting. Built by Pouria Asghari.">
+<meta name="author" content="Pouria Asghari — Gridline Systems">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://pouriaasghari1.github.io/pouriaasghari/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Pouria Asghari — Python Portfolio">
-<meta property="og:description" content="پروژه‌ها و تجربه‌های تعاملی پایتون پوریا اصغری.">
-<meta property="og:image" content="pouria.jpg">
-<title>Pouria Asghari — Python Portfolio</title>
-<link rel="preload" as="image" href="pouria.jpg">
-<link rel="stylesheet" href="portfolio.css">
+<meta property="og:site_name" content="Gridline Systems">
+<meta property="og:title" content="Gridline Systems — Professional Excel Automation for Small Business">
+<meta property="og:description" content="Custom Excel automation systems for small businesses, retailers and wholesalers: inventory, sales, wholesale orders, expenses and reporting. Built by Pouria Asghari.">
+<meta property="og:image" content="https://pouriaasghari1.github.io/pouriaasghari/assets/img/og-image.png">
+<meta property="og:url" content="https://pouriaasghari1.github.io/pouriaasghari/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gridline Systems — Professional Excel Automation for Small Business">
+<meta name="twitter:description" content="Custom Excel automation systems for small businesses, retailers and wholesalers: inventory, sales, wholesale orders, expenses and reporting. Built by Pouria Asghari.">
+<meta name="twitter:image" content="https://pouriaasghari1.github.io/pouriaasghari/assets/img/og-image.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/og-image.png">
+<link rel="preload" href="assets/fonts/SpaceGrotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<style>
+.portrait-wrap{position:relative;border-radius:26px;padding:10px;background:linear-gradient(160deg,rgba(52,224,161,.22),transparent 55%),var(--surface);border:1px solid var(--line)}
+.portrait-wrap img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;filter:saturate(.92) contrast(1.03)}
+.portrait-tag{position:absolute;left:24px;bottom:24px;display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;
+ background:rgba(8,12,10,.9);border:1px solid var(--line);backdrop-filter:blur(14px);font-size:12px}
+.portrait-tag strong{display:block;font-family:var(--font-d);font-size:13.5px}
+.portrait-tag small{color:var(--faint);font-size:10.5px}
+.demo-preview{border-radius:18px;border:1px solid var(--line);background:#0a100e;padding:8px;display:grid;gap:6px}
+.demo-preview__row{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:#0d1412;font-size:12.5px}
+.demo-preview__row span{color:var(--faint);flex:1}
+.demo-preview__row b{color:var(--text);font-weight:600;font-size:12px}
+.demo-preview__row em{font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:100px}
+.demo-preview__row em.ok{background:rgba(52,224,161,.12);color:var(--acc)}
+.demo-preview__row em.warn{background:rgba(244,196,100,.12);color:var(--amber)}
+.demo-preview__row em.danger{background:rgba(242,114,111,.12);color:var(--danger)}
+.demo-preview__cta{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:4px;padding:13px;border-radius:10px;
+ background:rgba(52,224,161,.1);border:1px solid rgba(52,224,161,.28);color:var(--acc);font-size:13px;font-weight:600;transition:.25s}
+.demo-preview__cta:hover{background:rgba(52,224,161,.18)}
+.demo-preview__cta svg{width:15px;height:15px}
+</style>
 </head>
-<body class="home-page">
-<canvas id="fx-canvas" aria-hidden="true"></canvas><div class="transition-overlay"></div>
-<header class="site-nav">
- <div class="container nav-inner">
-  <a class="logo" href="#home" aria-label="صفحه اصلی پوریا">POURIA<span>.</span></a>
-  <nav class="nav-links" aria-label="منوی اصلی"><a href="#projects">پروژه‌ها</a><a href="#about">مسیر من</a><a href="#contact">ارتباط</a></nav>
-  <a class="nav-cta" href="auth.html">ورود / ثبت‌نام <span aria-hidden="true">↗</span></a>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="site-nav">
+ <div class="container nav__inner">
+  <a class="brand" href="index.html" aria-label="Gridline Systems — home">
+   <img class="brand__mark" src="assets/logo.svg" alt="" width="36" height="36">
+   <span class="brand__text"><span class="brand__name">GRIDLINE</span><span class="brand__tag">EXCEL SYSTEMS</span></span>
+  </a>
+  <nav class="nav__links" aria-label="Main">
+   <a href="index.html" class="nav__link is-active">Home</a>
+   <div class="has-menu">
+    <a href="products.html" class="nav__link">Systems <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+    <div class="menu" role="group" aria-label="Excel systems">
+     <a class="menu__item" href="products/inventory.html"><span class="menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8.5 12 3 3 8.5v7L12 21l9-5.5z"/><path d="M3 8.5 12 14l9-5.5M12 14v7"/></svg></span><span><span class="menu__t">Inventory System</span><span class="menu__d">Know exactly what you have, what is running out and what to re…</span></span></a><a class="menu__item" href="products/sales.html"><span class="menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2.5l2.6 11h11L21 7H6"/></svg></span><span><span class="menu__t">Sales System</span><span class="menu__d">Every sale in one place, with revenue, margin and channel perf…</span></span></a><a class="menu__item" href="products/wholesale.html"><span class="menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h11v9H2zM13 10h4l4 3.5V16h-8z"/><circle cx="6.5" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg></span><span><span class="menu__t">Wholesale System</span><span class="menu__d">Purchase orders, trade accounts, backorders and receivables wi…</span></span></a><a class="menu__item" href="products/expenses.html"><span class="menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg></span><span><span class="menu__t">Expense System</span><span class="menu__d">See where the money actually goes — by category, vendor and mo…</span></span></a><a class="menu__item" href="products/reporting.html"><span class="menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span><span class="menu__t">Reporting System</span><span class="menu__d">One page that answers the question your bank, your partner or …</span></span></a>
+     <a class="menu__item" href="products.html" style="border-top:1px solid var(--line-soft);margin-top:4px;padding-top:12px">
+      <span class="menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+      <span><span class="menu__t">All systems</span><span class="menu__d">Compare the full catalog and pricing</span></span>
+     </a>
+     <a class="menu__item" href="demo.html" style="border-top:1px solid var(--line-soft);margin-top:4px;padding-top:12px">
+      <span class="menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      <span><span class="menu__t">Live demos</span><span class="menu__d">Try the calculation logic in your browser</span></span>
+     </a>
+    </div>
+   </div>
+   <a href="services.html" class="nav__link">Custom work</a>
+   <a href="pricing.html" class="nav__link">Pricing</a>
+   <a href="about.html" class="nav__link">About</a>
+   <a href="contact.html" class="nav__link">Contact</a>
+  </nav>
+  <div class="nav__actions">
+   <a class="btn btn--ghost btn--sm" href="contact.html">Book a call</a>
+   <a class="btn btn--primary btn--sm" href="pricing.html">See pricing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   <button class="burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="drawer">
+    <i></i><i></i><i></i>
+   </button>
+  </div>
  </div>
 </header>
-<main id="home">
-<section class="hero home-hero">
- <div class="container hero-grid">
-  <div class="hero-copy reveal">
-   <div class="eyebrow"><span class="live-dot"></span> PYTHON · LEARNING BY BUILDING</div>
-   <h1>پوریا اصغری<br><span class="gradient-text">Python · Builder</span></h1>
-   <p class="hero-desc">من پوریا اصغری هستم؛ در مسیر یادگیری پایتون. اینجا تمرین‌هایم را به پروژه‌های کوچک و قابل تجربه تبدیل می‌کنم تا هم بهتر یاد بگیرم، هم روند پیشرفتم را شفاف نشان بدهم.</p>
-   <div class="hero-actions"><a class="button primary" href="#projects">کاوش پروژه‌ها <span aria-hidden="true">↙</span></a><a class="button ghost" href="https://github.com/pouriaasghari1" target="_blank" rel="noopener noreferrer">دیدن GitHub ↗</a></div>
-   <div class="hero-foot"><span><i></i> پروژه‌های قابل تجربه</span><span><i></i> تمرین مفاهیم پایتون</span><span><i></i> طراحی واکنش‌گرا</span></div>
+<div class="drawer" id="drawer" inert>
+ <a href="index.html">Home<span>01</span></a>
+ <p class="drawer__group">Excel systems</p>
+ <a href="products/inventory.html" data-nav>Inventory System<span>System</span></a><a href="products/sales.html" data-nav>Sales System<span>System</span></a><a href="products/wholesale.html" data-nav>Wholesale System<span>System</span></a><a href="products/expenses.html" data-nav>Expense System<span>System</span></a><a href="products/reporting.html" data-nav>Reporting System<span>System</span></a>
+ <a href="products.html">All systems<span>Catalog</span></a>
+ <a href="demo.html">Live demos<span>Try it</span></a>
+ <p class="drawer__group">Studio</p>
+ <a href="services.html">Custom Excel work<span>Services</span></a>
+ <a href="pricing.html">Pricing<span>Plans</span></a>
+ <a href="about.html">About<span>Studio</span></a>
+ <a href="contact.html">Contact<span>Start</span></a>
+ <a class="btn btn--primary btn--block" href="contact.html">Start a project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+<main id="main">
+<section class="hero">
+ <div class="hero__bg" aria-hidden="true">
+  <div class="hero__grid"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__glow hero__glow--2"></div>
+  <div class="hero__noise"></div>
+ </div>
+ <div class="container hero__inner">
+  <div class="hero__copy">
+   <span class="eyebrow reveal">Excel automation studio · open for projects</span>
+   <h1 class="reveal" data-d="1">
+    <span class="line">Excel systems that</span>
+    <span class="line grad">run your business</span>
+    <span class="line">while you sleep.</span>
+   </h1>
+   <p class="hero__lede reveal" data-d="2">
+    I design and build <strong>professional Excel automation systems</strong> for small businesses,
+    retailers and wholesalers — inventory, sales, wholesale orders, expenses and reporting.
+    Real workbooks, real formulas, no subscriptions and no cloud lock-in.
+   </p>
+   <div class="hero__cta reveal" data-d="3">
+    <a class="btn btn--primary" href="products.html">Explore the systems <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn--ghost" href="demo.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg> Try a live demo</a>
+   </div>
+   <div class="hero__meta reveal" data-d="4">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Five ready-made systems</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Custom builds from €290</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> You own the file, forever</span>
+   </div>
   </div>
-  <div class="hero-stage reveal" aria-label="معرفی پوریا اصغری">
-   <div class="stage-grid" aria-hidden="true"></div><div class="stage-orbit orbit-one"></div><div class="stage-orbit orbit-two"></div>
-   <div class="stage-index"><span>PORTFOLIO / 2026</span><span class="stage-status"><i></i> IN PROGRESS</span></div>
-   <div class="portrait-frame"><div class="portrait-accent"></div><img class="profile-photo" src="pouria.jpg" alt="عکس پروفایل پوریا اصغری" width="620" height="620" fetchpriority="high" decoding="async"><div class="portrait-label"><span class="portrait-label-mark">PA</span><span><strong>پوریا اصغری</strong><small>Python learner · builder</small></span></div></div>
-   <div class="floating-code code-top" aria-hidden="true"><span class="code-dot"></span><span>if idea:</span><b> build()</b></div>
-   <div class="floating-code code-bottom" aria-hidden="true"><span class="code-symbol">{ }</span><span>small steps, real progress</span></div>
-   <div class="stage-coordinate" aria-hidden="true">35° / 51° · KEEP BUILDING</div>
+  <div class="hero__stage reveal" data-d="2">
+   <div class="hero__frame">
+    <div class="hero__chrome"><i></i><i></i><i></i><span>Gridline · executive overview</span></div>
+    <picture class=""><source type="image/webp" srcset="assets/img/dash-hero.webp"><img src="assets/img/dash-hero.png" alt="Original mockup of a consolidated Excel executive dashboard with revenue, inventory, wholesale and expense widgets" width="1560" height="1040" loading="eager" fetchpriority="high" decoding="async"></picture>
+   </div>
+   <div class="float-card float-card--a">
+    <span class="float-card__dot"></span>
+    <span><strong>Auto-refresh</strong><small>Inventory synced 02:00</small></span>
+   </div>
+   <div class="float-card float-card--b">
+    <span class="icon icon--sm" style="width:26px;height:26px;border-radius:8px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+    <span><strong>+18.2% revenue</strong><small>Sample dashboard data</small></span>
+   </div>
   </div>
  </div>
- <div class="hero-bottom-line" aria-hidden="true"><span>SELECTED WORK</span><span>SCROLL TO EXPLORE ↓</span></div>
-</section>
-<section class="section projects-section" id="projects">
  <div class="container">
-  <div class="section-head reveal"><div><div class="section-kicker">01 / SELECTED PROJECTS</div><h2 class="section-title">از تمرین تا تجربه</h2></div><p class="section-desc">هر پروژه یک تمرین برای فهم بهتر منطق برنامه‌نویسی است. وارد صفحه‌اش شو و نسخه تعاملی را امتحان کن.</p></div>
-  <div class="project-toolbar reveal"><div class="filter-bar" role="group" aria-label="دسته‌بندی پروژه‌ها"><button class="filter-btn active" data-filter="all" aria-pressed="true">همه <span>07</span></button><button class="filter-btn" data-filter="game" aria-pressed="false">بازی‌ها</button><button class="filter-btn" data-filter="tool" aria-pressed="false">ابزارها</button><button class="filter-btn" data-filter="logic" aria-pressed="false">منطق و شرط‌ها</button></div><span class="toolbar-note"><i></i> برای ورود، هر کارت را انتخاب کن</span></div>
-  <div class="project-grid">
-   <a class="project-card" style="--accent:#75f0cb;--i:0" data-category="tool logic" href="project-password.html" data-transition><div class="card-art art-password" aria-hidden="true"><span class="art-orb"></span><div class="art-lock">⌑</div><div class="art-lines"><i></i><i></i><i></i></div><span class="art-chip">RANDOM()</span></div><div class="card-top"><span class="card-icon" role="img" aria-label="Password Generator">🔐</span><span class="card-category">ابزار کاربردی</span></div><h3>Password Generator</h3><p>ساخت رمز تصادفی با کنترل طول و نوع کاراکترها.</p><div class="card-bottom"><span class="card-tech">RANDOM · STRINGS</span><span class="card-open">باز کردن <b>↗</b></span></div></a>
-   <a class="project-card" style="--accent:#ff76b9;--i:1" data-category="game logic" href="project-hangman.html" data-transition><div class="card-art art-hangman" aria-hidden="true"><span class="hang-line"></span><span class="hang-head"></span><span class="hang-body"></span><span class="hang-letters">P Y _ H O N</span></div><div class="card-top"><span class="card-icon" role="img" aria-label="Hangman">🔤</span><span class="card-category">بازی کلمه‌ای</span></div><h3>Hangman</h3><p>کلمه مخفی را حرف‌به‌حرف حدس بزن و تلاش‌هایت را مدیریت کن.</p><div class="card-bottom"><span class="card-tech">LOOPS · STRINGS</span><span class="card-open">بازی کن <b>↗</b></span></div></a>
-   <a class="project-card" style="--accent:#b1a0ff;--i:2" data-category="game logic" href="project-rock-paper-scissors.html" data-transition><div class="card-art art-rps" aria-hidden="true"><span>✊</span><i>VS</i><span>✌️</span><b>MAKE YOUR MOVE</b></div><div class="card-top"><span class="card-icon" role="img" aria-label="Rock Paper Scissors">✊</span><span class="card-category">بازی سریع</span></div><h3>Rock Paper Scissors</h3><p>در یک رقابت کوتاه، حرکتت را در برابر انتخاب تصادفی رایانه امتحان کن.</p><div class="card-bottom"><span class="card-tech">RANDOM · CONDITIONS</span><span class="card-open">بازی کن <b>↗</b></span></div></a>
-   <a class="project-card" style="--accent:#ffbd72;--i:3" data-category="game logic" href="project-text-adventure.html" data-transition><div class="card-art art-adventure" aria-hidden="true"><span class="adventure-moon"></span><span class="adventure-tower"></span><span class="adventure-ground"></span><b>CHOOSE YOUR PATH</b></div><div class="card-top"><span class="card-icon" role="img" aria-label="Text Adventure">🏰</span><span class="card-category">داستان تعاملی</span></div><h3>Text Adventure</h3><p>با انتخاب مسیرها، داستان را قدم‌به‌قدم جلو ببر.</p><div class="card-bottom"><span class="card-tech">INPUT · BRANCHING</span><span class="card-open">شروع داستان <b>↗</b></span></div></a>
-   <a class="project-card" style="--accent:#ffd36d;--i:4" data-category="game logic" href="project-treasure-map.html" data-transition><div class="card-art art-treasure" aria-hidden="true"><div class="treasure-mini-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="treasure-star">✦</i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="treasure-compass">N</span></div><div class="card-top"><span class="card-icon" role="img" aria-label="Treasure Map">🗺️</span><span class="card-category">بازی منطقی</span></div><h3>Treasure Map</h3><p>خانه‌های نقشه را جست‌وجو کن و جای گنج را پیدا کن.</p><div class="card-bottom"><span class="card-tech">LISTS · LOGIC</span><span class="card-open">کشف گنج <b>↗</b></span></div></a>
-   <a class="project-card" style="--accent:#75f0cb;--i:5" data-category="game logic" href="project-neon-cube.html" data-transition><div class="card-art art-neon-cube" aria-hidden="true"><div class="mini-cube-scene"><div class="mini-cube"><i class="mini-face mini-front">◇</i><i class="mini-face mini-back">◈</i><i class="mini-face mini-right">✳</i><i class="mini-face mini-left">⌘</i><i class="mini-face mini-top">△</i><i class="mini-face mini-bottom">⬡</i></div></div><span class="cube-card-label">ROTATE / SCAN</span></div><div class="card-top"><span class="card-icon" role="img" aria-label="Neon Cube">🧊</span><span class="card-category">بازی سه‌بعدی</span></div><h3>Neon Cube</h3><p>مکعب سه‌بعدی را بچرخان و هسته پنهان را با حافظه و منطق پیدا کن.</p><div class="card-bottom"><span class="card-tech">CSS 3D · LOGIC</span><span class="card-open">بازی کن <b>↗</b></span></div></a>
-   <a class="project-card" style="--accent:#8bc0ff;--i:5" data-category="tool" href="project-bmi-calculator.html" data-transition><div class="card-art art-bmi" aria-hidden="true"><div class="bmi-gauge"><span></span><i></i></div><strong>BMI</strong><small>CALCULATOR</small><div class="bmi-ticks"><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-top"><span class="card-icon" role="img" aria-label="BMI Calculator">🧮</span><span class="card-category">محاسبه‌گر</span></div><h3>BMI Calculator</h3><p>قد و وزن را وارد کن و نتیجه محاسبه را ببین.</p><div class="card-bottom"><span class="card-tech">FLOAT · FORMULA</span><span class="card-open">محاسبه <b>↗</b></span></div></a>
+  <div class="marquee" aria-hidden="true">
+   <div class="marquee__track">
+    <span>Inventory control</span><span>Sales dashboards</span><span>Wholesale purchase orders</span>
+    <span>Expense budgets</span><span>Board-ready reporting</span><span>Power Query automation</span>
+    <span>VBA where it earns its place</span><span>Cleaning messy spreadsheets</span>
+    <span>Inventory control</span><span>Sales dashboards</span><span>Wholesale purchase orders</span>
+    <span>Expense budgets</span><span>Board-ready reporting</span><span>Power Query automation</span>
+    <span>VBA where it earns its place</span><span>Cleaning messy spreadsheets</span>
+   </div>
   </div>
-  <div class="projects-foot reveal"><span>هر پروژه یک قدم در مسیر یادگیری است.</span><span>KEEP LEARNING <b>✳</b></span></div>
  </div>
 </section>
-<section class="section about-section" id="about">
+
+<!-- ============================ what I build ============================ -->
+<section class="section" id="systems">
  <div class="container">
-  <div class="section-head reveal"><div><div class="section-kicker">02 / THE PROCESS</div><h2 class="section-title">در حال ساختن پایه‌های قوی</h2></div><p class="section-desc">فعلاً تمرکزم روی فهم اصول برنامه‌نویسی و تبدیل هر مفهوم به تمرین قابل اجراست.</p></div>
-  <div class="about-layout">
-   <div class="about-main reveal"><div class="about-number">01 <span>MY APPROACH</span></div><h3>کمتر حفظ کردن؛<br><span>بیشتر ساختن.</span></h3><p>برای من یادگیری وقتی بهتر جا می‌افتد که بعد از دیدن یک مفهوم، با آن چیزی بسازم، خطا کنم و دوباره اصلاحش کنم. این پورتفولیو دفتر کار همین مسیر است؛ نه ادعای تسلط کامل.</p><a href="https://github.com/pouriaasghari1" target="_blank" rel="noopener noreferrer" class="text-link">کدها و تمرین‌ها در GitHub <b>↗</b></a><div class="about-decoration" aria-hidden="true">while learning:<br>&nbsp;&nbsp;keep_building()</div></div>
-   <div class="about-details reveal"><div class="skill-panel"><div class="mini-section-title"><span>01</span><h3>مفاهیمی که تمرین می‌کنم</h3></div><div class="skill-list"><span class="skill-chip">Variables & Types</span><span class="skill-chip">if / elif / else</span><span class="skill-chip">for / while</span><span class="skill-chip">Functions</span><span class="skill-chip">Lists</span><span class="skill-chip">Strings</span><span class="skill-chip">random</span><span class="skill-chip">Input / Output</span></div></div><div class="skill-panel"><div class="mini-section-title"><span>02</span><h3>چیزی که می‌خواهم بهتر کنم</h3></div><p>خوانایی کد، حل مسئله، طراحی رابط، مدیریت خطا و ساخت پروژه‌های بزرگ‌تر به‌مرور در اولویت من هستند.</p><div class="progress-label"><span>LEARN</span><span>BUILD</span><span>REFINE</span></div><div class="progress-track"><i></i></div></div></div>
+  <div class="section-head section-head--row">
+   <div>
+    <div class="kicker-row reveal"><span>01 — The catalog</span><span class="rule"></span></div>
+    <h2 style="margin-top:16px">Five systems. One habit:<br>the numbers take care of themselves.</h2>
+   </div>
+   <p class="reveal" data-d="2">Each system is a complete Excel workbook built around one job — stock, sales, wholesale orders, expenses or reporting. Start with the one that hurts most, add the others later.</p>
   </div>
-  <div class="transparency-note reveal"><span class="note-icon">i</span><p><strong>شفافیت درباره پروژه‌ها</strong><br>صفحه‌های تعاملی این سایت با JavaScript اجرا می‌شوند و برای نمایش مفاهیم ساخته شده‌اند؛ اجرای مستقیم کد Python نیستند. برای تطبیق کامل منطق هر بازی با نسخه اصلی پایتون، باید کد اصلی آن هم اضافه و بررسی شود.</p></div>
+  <div class="grid grid--2">
+   <article class="card product-card reveal product-card--feature" data-category="retail wholesale" data-d="0">
+ <a href="products/inventory.html" class="product-card__media" aria-label="Open Inventory Command Center">
+  <span class="tag product-card__badge">Most requested</span>
+  <picture class=""><source type="image/webp" srcset="assets/img/dash-inventory.webp"><img src="assets/img/dash-inventory.png" alt="Original dashboard mockup of the Inventory Command Center" width="1440" height="900" loading="lazy" decoding="async"></picture>
+ </a>
+ <div class="product-card__body">
+  <div style="display:flex;align-items:center;gap:10px">
+   <span class="icon icon--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8.5 12 3 3 8.5v7L12 21l9-5.5z"/><path d="M3 8.5 12 14l9-5.5M12 14v7"/></svg></span>
+   <span class="eyebrow eyebrow--plain">Inventory System</span>
+  </div>
+  <h3 class="product-card__title"><a href="products/inventory.html">Inventory Command Center</a></h3>
+  <p class="product-card__desc">A multi-sheet stock workbook with live reorder alerts, valuation, supplier lead times and a one-click monthly stock report.</p>
+  <div class="product-card__foot">
+   <span class="product-card__price">€390<small>one-time build · starting from</small></span>
+   <a class="product-card__link" href="products/inventory.html">View system <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  </div>
+ </div>
+</article><article class="card product-card reveal" data-category="retail wholesale" data-d="1">
+ <a href="products/sales.html" class="product-card__media" aria-label="Open Sales Performance Studio">
+  
+  <picture class=""><source type="image/webp" srcset="assets/img/dash-sales.webp"><img src="assets/img/dash-sales.png" alt="Original dashboard mockup of the Sales Performance Studio" width="1440" height="900" loading="lazy" decoding="async"></picture>
+ </a>
+ <div class="product-card__body">
+  <div style="display:flex;align-items:center;gap:10px">
+   <span class="icon icon--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2.5l2.6 11h11L21 7H6"/></svg></span>
+   <span class="eyebrow eyebrow--plain">Sales System</span>
+  </div>
+  <h3 class="product-card__title"><a href="products/sales.html">Sales Performance Studio</a></h3>
+  <p class="product-card__desc">An order-entry workbook that turns daily sales into clean dashboards: revenue by month, product, channel and customer.</p>
+  <div class="product-card__foot">
+   <span class="product-card__price">€390<small>one-time build · starting from</small></span>
+   <a class="product-card__link" href="products/sales.html">View system <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  </div>
+ </div>
+</article><article class="card product-card reveal" data-category="wholesale" data-d="2">
+ <a href="products/wholesale.html" class="product-card__media" aria-label="Open Wholesale Order Hub">
+  <span class="tag product-card__badge">B2B</span>
+  <picture class=""><source type="image/webp" srcset="assets/img/dash-wholesale.webp"><img src="assets/img/dash-wholesale.png" alt="Original dashboard mockup of the Wholesale Order Hub" width="1440" height="900" loading="lazy" decoding="async"></picture>
+ </a>
+ <div class="product-card__body">
+  <div style="display:flex;align-items:center;gap:10px">
+   <span class="icon icon--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h11v9H2zM13 10h4l4 3.5V16h-8z"/><circle cx="6.5" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg></span>
+   <span class="eyebrow eyebrow--plain">Wholesale System</span>
+  </div>
+  <h3 class="product-card__title"><a href="products/wholesale.html">Wholesale Order Hub</a></h3>
+  <p class="product-card__desc">A B2B order desk for trade customers: PO tracking, fill rates, credit exposure and delivery schedules in one workbook.</p>
+  <div class="product-card__foot">
+   <span class="product-card__price">€590<small>one-time build · starting from</small></span>
+   <a class="product-card__link" href="products/wholesale.html">View system <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  </div>
+ </div>
+</article><article class="card product-card reveal" data-category="retail wholesale" data-d="3">
+ <a href="products/expenses.html" class="product-card__media" aria-label="Open Expense Control Center">
+  
+  <picture class=""><source type="image/webp" srcset="assets/img/dash-expenses.webp"><img src="assets/img/dash-expenses.png" alt="Original dashboard mockup of the Expense Control Center" width="1440" height="900" loading="lazy" decoding="async"></picture>
+ </a>
+ <div class="product-card__body">
+  <div style="display:flex;align-items:center;gap:10px">
+   <span class="icon icon--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg></span>
+   <span class="eyebrow eyebrow--plain">Expense System</span>
+  </div>
+  <h3 class="product-card__title"><a href="products/expenses.html">Expense Control Center</a></h3>
+  <p class="product-card__desc">An expense tracker with approval status, budget-versus-actual by team, and a monthly close that takes minutes.</p>
+  <div class="product-card__foot">
+   <span class="product-card__price">€290<small>one-time build · starting from</small></span>
+   <a class="product-card__link" href="products/expenses.html">View system <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  </div>
+ </div>
+</article><article class="card product-card reveal" data-category="retail wholesale reporting" data-d="4">
+ <a href="products/reporting.html" class="product-card__media" aria-label="Open Executive Reporting Suite">
+  <span class="tag product-card__badge">Board-ready</span>
+  <picture class=""><source type="image/webp" srcset="assets/img/dash-reporting.webp"><img src="assets/img/dash-reporting.png" alt="Original dashboard mockup of the Executive Reporting Suite" width="1440" height="900" loading="lazy" decoding="async"></picture>
+ </a>
+ <div class="product-card__body">
+  <div style="display:flex;align-items:center;gap:10px">
+   <span class="icon icon--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+   <span class="eyebrow eyebrow--plain">Reporting System</span>
+  </div>
+  <h3 class="product-card__title"><a href="products/reporting.html">Executive Reporting Suite</a></h3>
+  <p class="product-card__desc">A consolidation workbook that pulls your other sheets into a single scorecard with monthly, quarterly and board-pack views.</p>
+  <div class="product-card__foot">
+   <span class="product-card__price">€490<small>one-time build · starting from</small></span>
+   <a class="product-card__link" href="products/reporting.html">View system <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  </div>
+ </div>
+</article>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-top:28px">
+   <p class="muted" style="font-size:13.5px">Every screenshot on this site is an original mockup drawn for this catalog — not a stock image and not someone else's file.</p>
+   <a class="link-arrow" href="products.html">Compare all systems <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  </div>
  </div>
 </section>
-<section class="section contact-section" id="contact">
- <div class="container"><div class="contact-panel reveal"><div class="contact-copy"><div class="section-kicker">03 / SAY HELLO</div><h2>ادامه مسیر،<br><span>با پروژه بعدی.</span></h2><p>برای دیدن کدها یا ارتباط، از راه‌های زیر استفاده کن.</p></div><div class="contact-links"><a href="https://github.com/pouriaasghari1" target="_blank" rel="noopener noreferrer"><span class="contact-link-icon">GH</span><span><strong>GitHub</strong><small>کدها و مخزن پروژه‌ها</small></span><b>↗</b></a><a href="https://t.me/pouriaasghari_1" target="_blank" rel="noopener noreferrer"><span class="contact-link-icon">TG</span><span><strong>Telegram</strong><small>پیام مستقیم</small></span><b>↗</b></a><a href="https://instagram.com/pouriaasghari_1" target="_blank" rel="noopener noreferrer"><span class="contact-link-icon">IG</span><span><strong>Instagram</strong><small>شبکه اجتماعی</small></span><b>↗</b></a><a href="mailto:pouriaasghari@gmail.com"><span class="contact-link-icon">@</span><span><strong>Email</strong><small>ارسال ایمیل</small></span><b>↗</b></a></div></div></div>
+
+<!-- ============================ why it works ============================ -->
+<section class="section" style="background:linear-gradient(180deg,transparent,rgba(52,224,161,.03),transparent)">
+ <div class="container">
+  <div class="grid grid--2" style="align-items:center;gap:clamp(28px,5vw,64px)">
+   <div>
+    <div class="kicker-row reveal"><span>02 — Why Excel, why automation</span><span class="rule"></span></div>
+    <h2 class="reveal" data-d="1" style="font-size:clamp(28px,3.8vw,44px);margin-top:16px">You already trust the spreadsheet. I make it dependable.</h2>
+    <p class="reveal" data-d="2" style="color:var(--muted);margin-top:16px;max-width:56ch">
+     Most small businesses are not losing money because they lack software. They are losing money to
+     the version of the file nobody understands, the stock figure that is three days old, and the
+     Sunday evening spent rebuilding a report. A properly built workbook fixes all three.
+    </p>
+    <ul class="feature-list reveal" data-d="3" style="margin-top:24px">
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>One input, every view.</strong> Type a sale once; the dashboard, the stock sheet and the monthly report all know about it.</span></li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Protected structure.</strong> Nobody can accidentally delete a formula or type a date into a number column.</span></li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>No subscription.</strong> It is your file, on your machine or your OneDrive. It keeps working if we never speak again.</span></li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Documented and handover-ready.</strong> A short guide, a commented formula layer and a walkthrough call.</span></li>
+    </ul>
+   </div>
+   <div class="reveal" data-d="2">
+    <div class="card" style="padding:0;overflow:hidden">
+     <div class="hero__chrome"><i></i><i></i><i></i><span>inventory · live view</span></div>
+     <picture class=""><source type="image/webp" srcset="assets/img/dash-inventory.webp"><img src="assets/img/dash-inventory.png" alt="Original mockup of the Inventory Command Center dashboard with KPI cards, stock movement chart and reorder table" width="1440" height="900" loading="lazy" decoding="async"></picture>
+    </div>
+    <div class="grid grid--2" style="margin-top:16px">
+     <div class="card" style="padding:20px">
+      <span class="icon icon--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span>
+      <h3 style="font-size:15px;margin:12px 0 5px">One click refresh</h3>
+      <p style="font-size:12.8px;color:var(--muted)">Power Query pulls your exports in and rebuilds the model.</p>
+     </div>
+     <div class="card" style="padding:20px">
+      <span class="icon icon--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.6 4.5 6v6.2c0 4.2 3 7.4 7.5 9.2 4.5-1.8 7.5-5 7.5-9.2V6z"/><path d="m8.6 12 2.5 2.5 4.4-4.6"/></svg></span>
+      <h3 style="font-size:15px;margin:12px 0 5px">Built to be safe</h3>
+      <p style="font-size:12.8px;color:var(--muted)">Validated inputs, protected sheets, a clear backup routine.</p>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============================ demo teaser ============================ -->
+<section class="section">
+ <div class="container">
+  <div class="card reveal" style="padding:clamp(26px,4vw,54px);background:
+     radial-gradient(120% 140% at 100% 0%,rgba(52,224,161,.12),transparent 58%),var(--surface);
+     border-color:rgba(52,224,161,.2)">
+   <div class="grid grid--2" style="align-items:center;gap:clamp(24px,4vw,52px)">
+    <div>
+     <span class="eyebrow">Product demonstrations</span>
+     <h2 style="font-size:clamp(26px,3.6vw,40px);margin:18px 0 14px">Don't take my word for the logic. Break it yourself.</h2>
+     <p style="color:var(--muted);max-width:52ch">
+      The demos below are working simulations of the catalog systems, running on sample data.
+      Approve an expense, move a purchase order forward, sell ten units of stock — and watch
+      every KPI, flag and total recalculate exactly as it does inside the workbook.
+     </p>
+     <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px">
+      <a class="btn btn--primary" href="demo.html">Open the demo lab <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--ghost" href="contact.html">Ask about a custom build</a>
+     </div>
+     <p class="muted" style="font-size:12px;margin-top:16px">Sample data only — no customer figures, no invented testimonials.</p>
+    </div>
+    <div class="demo-preview">
+     <div class="demo-preview__row"><span>Reorder status</span><b>18 units · reorder 40</b><em class="danger">Critical</em></div>
+     <div class="demo-preview__row"><span>Fill rate</span><b>PO-20418</b><em class="ok">96%</em></div>
+     <div class="demo-preview__row"><span>Budget used</span><b>$2,480 approved</b><em class="warn">21%</em></div>
+     <div class="demo-preview__row"><span>Blended margin</span><b>3 entities</b><em class="ok">36%</em></div>
+     <a class="demo-preview__cta" href="demo.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg> Launch interactive demo</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============================ process ============================ -->
+<section class="section" id="process">
+ <div class="container">
+  <div class="section-head section-head--row">
+   <div>
+    <div class="kicker-row reveal"><span>03 — How a build runs</span><span class="rule"></span></div>
+    <h2 style="margin-top:16px">Four steps, no mystery.</h2>
+   </div>
+   <p class="reveal" data-d="2">Most catalog builds are delivered in 5–10 working days. Custom systems depend on how messy the input is — I will tell you honestly after I have seen your files.</p>
+  </div>
+  <div class="process">
+   <div class="step reveal"><span class="step__num">STEP 01</span><h3>Discovery call</h3><p>A short call and a look at the spreadsheet you use today. We agree what the system must do and what it must not do.</p></div>
+   <div class="step reveal" data-d="1"><span class="step__num">STEP 02</span><h3>Blueprint</h3><p>You get a written structure: sheets, tables, rules and the exact deliverables. Nothing is built before you approve it.</p></div>
+   <div class="step reveal" data-d="2"><span class="step__num">STEP 03</span><h3>Build & test</h3><p>The workbook is built, protected, documented and stress-tested with your real data shapes and awkward edge cases.</p></div>
+   <div class="step reveal" data-d="3"><span class="step__num">STEP 04</span><h3>Handover</h3><p>A walkthrough call, a short manual, and 30 days of support for fixes and questions. The file is yours.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- ============================ pricing teaser ============================ -->
+<section class="section" id="pricing-teaser">
+ <div class="container">
+  <div class="section-head section-head--row">
+   <div>
+    <div class="kicker-row reveal"><span>04 — Pricing</span><span class="rule"></span></div>
+    <h2 style="margin-top:16px">Fixed prices. Written scope. No surprises.</h2>
+   </div>
+   <p class="reveal" data-d="2">Catalog systems start at €290. Custom work is quoted after the blueprint. Everything is a one-time build — there is no monthly fee to keep using your own file.</p>
+  </div>
+  <div class="price-grid">
+   <div class="card price reveal">
+    <span class="price__name">Starter system</span>
+    <div><span class="price__amount">€290<span>one-time</span></span></div>
+    <p class="price__desc">One core workbook for a single job — expenses or a clean sales tracker.</p>
+    <ul class="price__list">
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>One catalog system (expenses)</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Up to 3 source sheets</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Dashboard + printable report</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Handover call + manual</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>14 days of support</li>
+    </ul>
+    <div class="price__foot"><a class="btn btn--ghost btn--block" href="pricing.html" data-select-plan="Starter">Choose Starter</a></div>
+   </div>
+   <div class="card price price--feature reveal" data-d="1">
+    <span class="tag price__badge">Most chosen</span>
+    <span class="price__name">Business system</span>
+    <div><span class="price__amount">€590<span>one-time</span></span></div>
+    <p class="price__desc">A full operating system: inventory, sales or wholesale orders, connected and automated.</p>
+    <ul class="price__list">
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Any catalog system (inventory, sales, wholesale, reporting)</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Up to 8 sheets + dashboard</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Automated refreshes (Power Query)</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Input validation + sheet protection</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Walkthrough recording + manual</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>30 days of support</li>
+    </ul>
+    <div class="price__foot"><a class="btn btn--primary btn--block" href="pricing.html" data-select-plan="Business">Choose Business</a></div>
+   </div>
+   <div class="card price reveal" data-d="2">
+    <span class="price__name">Custom build</span>
+    <div><span class="price__amount">Quoted<span>from €900</span></span></div>
+    <p class="price__desc">Something your business needs that no catalog system covers — designed from scratch.</p>
+    <ul class="price__list">
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Discovery + written blueprint</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Unlimited sheets within scope</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Power Query, VBA or formulas as needed</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Data cleanup included</li>
+     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>60 days of support</li>
+    </ul>
+    <div class="price__foot"><a class="btn btn--ghost btn--block" href="pricing.html" data-select-plan="Custom">Request a quote</a></div>
+   </div>
+  </div>
+  <p class="price__note" style="margin-top:20px">Prices in EUR, excluding VAT where applicable. Payment in two parts: 50% to start, 50% on handover.</p>
+ </div>
+</section>
+
+<!-- ============================ about teaser ============================ -->
+<section class="section" id="about-teaser">
+ <div class="container">
+  <div class="grid grid--2" style="gap:clamp(28px,5vw,60px);align-items:center">
+   <div class="reveal">
+    <div class="portrait-wrap">
+     <img src="pouria.jpg" alt="Portrait of Pouria Asghari, founder of Gridline Systems" width="620" height="620" loading="lazy" decoding="async" style="border-radius:24px">
+     <div class="portrait-tag">
+      <span class="float-card__dot"></span>
+      <span><strong>Pouria Asghari</strong><small>Founder · Excel systems developer</small></span>
+     </div>
+    </div>
+   </div>
+   <div>
+    <div class="kicker-row reveal"><span>05 — About</span><span class="rule"></span></div>
+    <h2 style="font-size:clamp(28px,3.8vw,44px);margin-top:16px">One person, one speciality: making Excel do the work.</h2>
+    <p class="reveal" data-d="2" style="color:var(--muted);margin-top:16px;max-width:56ch">
+     I am Pouria Asghari. I build Excel automation systems for small businesses — the kind of company
+     where the owner is also the buyer, the accountant and the IT department. Everything I ship is
+     built to be opened by a tired person on a Friday afternoon and still make sense.
+    </p>
+    <p class="reveal" data-d="3" style="color:var(--muted);margin-top:12px;max-width:56ch">
+     My background is in code — Python, logic, interactive tools — and that shows in how the
+     workbooks are structured: no duplicated formulas, no mystery numbers, no sheets named
+     <em>Final_v3_new</em>.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px" class="reveal" data-d="4">
+     <a class="btn btn--primary" href="about.html">More about the studio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+     <a class="btn btn--ghost" href="contact.html">Talk to me directly</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============================ faq teaser ============================ -->
+<section class="section" id="faq-teaser">
+ <div class="container">
+  <div class="grid grid--2" style="gap:clamp(28px,5vw,64px);align-items:start">
+   <div>
+    <div class="kicker-row reveal"><span>06 — Questions</span><span class="rule"></span></div>
+    <h2 style="font-size:clamp(28px,3.8vw,44px);margin-top:16px">Straight answers.</h2>
+    <p class="reveal" data-d="2" style="color:var(--muted);margin-top:14px;max-width:42ch">The five things people ask before they trust an Excel system with their business.</p>
+    <a class="link-arrow reveal" data-d="3" href="faq.html" style="margin-top:22px">Read the full FAQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+   </div>
+   <div class="faq reveal" data-d="2">
+    <details class="faq__item" open>
+     <summary class="faq__q">Is this a real Excel file or an online app?<i></i></summary>
+     <div class="faq__a">A real <strong>.xlsx</strong> workbook. It opens in Excel (Microsoft 365 or 2016+) and, where noted, in LibreOffice. You work in a file you own — nothing is hosted, nothing expires.</div>
+    </details>
+    <details class="faq__item">
+     <summary class="faq__q">Do I need macros or a subscription?<i></i></summary>
+     <div class="faq__a">No subscription, ever. Most systems run on formulas and Power Query, which need nothing extra. Where a macro genuinely saves time I add it and explain the security setting, but the workbook is designed to keep working without it.</div>
+    </details>
+    <details class="faq__item">
+     <summary class="faq__q">Can it use the spreadsheet I already have?<i></i></summary>
+     <div class="faq__a">Yes — that is usually the best starting point. I clean and restructure what you have instead of forcing you onto a new layout, so your product codes, customers and history stay intact.</div>
+    </details>
+    <details class="faq__item">
+     <summary class="faq__q">How long does a build take?<i></i></summary>
+     <div class="faq__a">Catalog systems: 5–10 working days. Custom builds: usually 2–4 weeks, depending on data cleanup and how many people need to use it.</div>
+    </details>
+    <details class="faq__item">
+     <summary class="faq__q">What if I break something after handover?<i></i></summary>
+     <div class="faq__a">Worst case, you restore a backup — the routine is part of the handover. Support is included (14–60 days depending on the package) and later fixes are quoted as small jobs.</div>
+    </details>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============================ contact ============================ -->
+<section class="section" id="contact-teaser">
+ <div class="container">
+  <div class="card reveal" style="padding:clamp(26px,4vw,54px);display:grid;gap:clamp(24px,4vw,48px);
+      background:radial-gradient(120% 130% at 0% 0%,rgba(52,224,161,.13),transparent 55%),var(--surface-2);
+      border-color:rgba(52,224,161,.18)">
+   <div class="grid grid--2" style="gap:clamp(24px,4vw,48px);align-items:center">
+    <div>
+     <span class="eyebrow">Start here</span>
+     <h2 style="font-size:clamp(26px,3.6vw,42px);margin:18px 0 14px">Tell me what your spreadsheet should be doing.</h2>
+     <p style="color:var(--muted);max-width:50ch">
+      Describe the job in plain words — “I need to know what to reorder every Monday” is a perfectly
+      good brief. You will get an honest answer about whether Excel is the right tool, what it
+      would cost, and how long it takes.
+     </p>
+     <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px">
+      <a class="btn btn--primary" href="contact.html">Send a project brief <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></a>
+      <a class="btn btn--ghost" href="mailto:pouriaasghari@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 7 9 6.5L21 7"/></svg> pouriaasghari@gmail.com</a>
+     </div>
+    </div>
+    <div class="grid" style="gap:12px">
+     <div class="mini"><span class="icon icon--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3.2 2"/></svg></span><div><h4>Reply within one working day</h4><p>Usually much faster on Telegram.</p></div></div>
+     <div class="mini"><span class="icon icon--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 3 2.6 15 0 18M12 3c-2.6 3-2.6 15 0 18"/></svg></span><div><h4>Working in English &amp; Persian</h4><p>Remote delivery, files shared over email or OneDrive.</p></div></div>
+     <div class="mini"><span class="icon icon--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10" width="15" height="11" rx="2.5"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"/></svg></span><div><h4>Your data stays yours</h4><p>Sample files are deleted after the project unless you ask me to keep them.</p></div></div>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 </main>
-<footer class="footer"><div class="container footer-inner"><span>© <strong>Pouria Asghari</strong> · ساخته‌شده در مسیر یادگیری</span><a href="#home">بازگشت به بالا ↑</a></div></footer>
-<script src="portfolio.js" defer></script>
-</body></html>
+<footer class="footer">
+ <div class="container">
+  <div class="footer__top">
+   <div class="footer__brand">
+    <a class="brand" href="index.html" aria-label="Gridline Systems — home">
+     <img class="brand__mark" src="assets/logo.svg" alt="" width="36" height="36">
+     <span class="brand__text"><span class="brand__name">GRIDLINE</span><span class="brand__tag">EXCEL SYSTEMS</span></span>
+    </a>
+    <p>Professional Excel automation systems for small businesses, retailers and wholesalers. Built by Pouria Asghari.</p>
+    <div class="social" style="margin-top:18px">
+     <a href="mailto:pouriaasghari@gmail.com" aria-label="Email Gridline Systems" title="pouriaasghari@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 7 9 6.5L21 7"/></svg></a>
+     <a href="https://t.me/pouriaasghari_1" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></a>
+     <a href="https://github.com/pouriaasghari1" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></a>
+    </div>
+   </div>
+   <div>
+    <h4>Systems</h4>
+    <ul><li><a href="products/inventory.html">Inventory System</a></li><li><a href="products/sales.html">Sales System</a></li><li><a href="products/wholesale.html">Wholesale System</a></li><li><a href="products/expenses.html">Expense System</a></li><li><a href="products/reporting.html">Reporting System</a></li><li><a href="products.html">All systems</a></li></ul>
+   </div>
+   <div>
+    <h4>Studio</h4>
+    <ul>
+     <li><a href="services.html">Custom Excel development</a></li>
+     <li><a href="pricing.html">Pricing</a></li>
+     <li><a href="demo.html">Product demonstrations</a></li>
+     <li><a href="about.html">About</a></li>
+     <li><a href="faq.html">FAQ</a></li>
+    </ul>
+   </div>
+   <div>
+    <h4>Contact</h4>
+    <ul>
+     <li><a href="mailto:pouriaasghari@gmail.com">pouriaasghari@gmail.com</a></li>
+     <li><a href="https://t.me/pouriaasghari_1" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+     <li><a href="contact.html">Project briefing form</a></li>
+     <li><a href="portfolio.html">Personal portfolio (older)</a></li>
+    </ul>
+   </div>
+  </div>
+  <div class="footer__bottom">
+   <span>© <span data-year>2026</span> Gridline Systems · Pouria Asghari. All rights reserved.</span>
+   <span>Built with plain HTML, CSS and JavaScript · Hosted on GitHub Pages</span>
+  </div>
+ </div>
+</footer>
+<script src="js/site.js" defer></script>
+
+</body>
+</html>
