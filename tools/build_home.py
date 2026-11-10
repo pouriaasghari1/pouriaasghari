@@ -403,6 +403,6 @@ extra = """<style>
 </style>"""
 
 page("index.html",
-     "Pouria Business — Professional Excel Automation for Small Business",
-     "Pouria Business builds custom Excel automation systems for small businesses, retailers and wholesalers: inventory, sales, wholesale orders, expenses and reporting.",
+     SITE_TITLE,
+     SITE_DESCRIPTION,
      hero, base="", active="home", extra_head=extra, canonical=SITE_URL + "/")

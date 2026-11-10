@@ -6,6 +6,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BRAND = "Pouria Business"
 BRAND_SHORT = "POURIA"
 BRAND_TAG = "BUSINESS"
+SITE_TITLE = "Pouria Business | Excel Automation & Business Solutions"
+SITE_DESCRIPTION = ("Pouria Business by Pouria Asghari provides smart Excel automation solutions for sales "
+                    "management, inventory tracking, business reporting, and order management.")
 SITE_URL = "https://pouriaasghari1.github.io/pouriaasghari"
 EMAIL = "pouriabusines1@gmail.com"
 INSTAGRAM = "https://www.instagram.com/pouria_busines/"
@@ -69,7 +72,7 @@ PRODUCTS = [
         "name": "Inventory Command Center",
         "short": "Inventory System",
         "tagline": "Know exactly what you have, what is running out and what to reorder — before it costs you a sale.",
-        "desc": "A multi-sheet stock workbook with live reorder alerts, valuation, supplier lead times and a one-click monthly stock report.",
+        "desc": "Excel inventory system with live reorder alerts, stock valuation and supplier lead times — so you know exactly what to reorder.",
         "icon": "box",
         "image": "dash-inventory",
         "price": "€390",
@@ -111,7 +114,7 @@ PRODUCTS = [
         "name": "Sales Performance Studio",
         "short": "Sales System",
         "tagline": "Every sale in one place, with revenue, margin and channel performance that update themselves.",
-        "desc": "An order-entry workbook that turns daily sales into clean dashboards: revenue by month, product, channel and customer.",
+        "desc": "Excel sales system that turns order entry into revenue, margin and channel dashboards — no manual reporting.",
         "icon": "cart",
         "image": "dash-sales",
         "price": "€390",
@@ -153,7 +156,7 @@ PRODUCTS = [
         "name": "Wholesale Order Hub",
         "short": "Wholesale System",
         "tagline": "Purchase orders, trade accounts, backorders and receivables without a single lost email.",
-        "desc": "A B2B order desk for trade customers: PO tracking, fill rates, credit exposure and delivery schedules in one workbook.",
+        "desc": "Excel wholesale system for purchase orders, trade accounts, fill rates, receivables and delivery schedules in one workbook.",
         "icon": "truck",
         "image": "dash-wholesale",
         "price": "€590",
@@ -195,7 +198,7 @@ PRODUCTS = [
         "name": "Expense Control Center",
         "short": "Expense System",
         "tagline": "See where the money actually goes — by category, vendor and month — without chasing receipts.",
-        "desc": "An expense tracker with approval status, budget-versus-actual by team, and a monthly close that takes minutes.",
+        "desc": "Excel expense system with approvals, budget-versus-actual by team and a month-end close that takes minutes.",
         "icon": "card",
         "image": "dash-expenses",
         "price": "€290",
@@ -237,7 +240,7 @@ PRODUCTS = [
         "name": "Executive Reporting Suite",
         "short": "Reporting System",
         "tagline": "One page that answers the question your bank, your partner or your accountant always asks.",
-        "desc": "A consolidation workbook that pulls your other sheets into a single scorecard with monthly, quarterly and board-pack views.",
+        "desc": "Excel reporting system that consolidates your data into a one-page scorecard and a print-ready board pack.",
         "icon": "chart",
         "image": "dash-reporting",
         "price": "€490",
@@ -281,7 +284,81 @@ PRODUCT_BY_SLUG = {p["slug"]: p for p in PRODUCTS}
 # --------------------------------------------------------------------------
 # layout
 # --------------------------------------------------------------------------
-def head(title, description, base="", extra="", canonical=""):
+def jsonld(*blocks):
+    """Serialise one or more JSON-LD graphs into a script tag."""
+    import json
+    payload = blocks[0] if len(blocks) == 1 else {"@context": "https://schema.org", "@graph": [b for b in blocks]}
+    text = json.dumps(payload, ensure_ascii=False, indent=1)
+    return '<script type="application/ld+json">\n' + text + "\n</script>\n"
+
+
+def site_identity():
+    """Organization + WebSite + Person graph. No invented addresses, phones or ratings."""
+    import json
+    org = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": SITE_URL + "/#organization",
+        "name": BRAND,
+        "alternateName": "Pouria Business — Excel Automation",
+        "url": SITE_URL + "/",
+        "description": SITE_DESCRIPTION,
+        "email": EMAIL,
+        "logo": {
+            "@type": "ImageObject",
+            "url": SITE_URL + "/assets/img/favicon-512.png",
+            "width": 512,
+            "height": 512,
+        },
+        "image": SITE_URL + "/assets/img/og-image.png",
+        "founder": {"@id": SITE_URL + "/#person"},
+        "employee": {"@id": SITE_URL + "/#person"},
+        "sameAs": [INSTAGRAM, GITHUB],
+        "knowsAbout": [
+            "Excel automation",
+            "Inventory management",
+            "Sales reporting",
+            "Wholesale order management",
+            "Expense tracking",
+            "Business reporting",
+            "Power Query",
+            "VBA",
+        ],
+        "makesOffer": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Excel automation systems"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom Excel development"}},
+        ],
+    }
+    website = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": SITE_URL + "/#website",
+        "name": BRAND,
+        "url": SITE_URL + "/",
+        "description": SITE_DESCRIPTION,
+        "inLanguage": "en",
+        "publisher": {"@id": SITE_URL + "/#organization"},
+    }
+    person = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": SITE_URL + "/#person",
+        "name": "Pouria Asghari",
+        "jobTitle": "Founder",
+        "description": "Founder of Pouria Business, building Excel automation systems for small businesses, retailers and wholesalers.",
+        "worksFor": {"@id": SITE_URL + "/#organization"},
+        "email": "mailto:" + EMAIL,
+        "url": SITE_URL + "/about.html",
+        "image": SITE_URL + "/assets/img/favicon-512.png",
+        "sameAs": [INSTAGRAM, GITHUB],
+    }
+    return jsonld(org, website, person)
+
+
+def head(title, description, base="", extra="", canonical="", page_type="website", structured=None, image="assets/img/og-image.png"):
+    url = canonical or (SITE_URL + "/")
+    og_image = image if image.startswith("http") else SITE_URL + "/" + image
+    ld = site_identity() if structured is None else structured
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -291,25 +368,48 @@ def head(title, description, base="", extra="", canonical=""):
 <title>{title}</title>
 <meta name="description" content="{description}">
 <meta name="author" content="Pouria Business">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="{canonical or (SITE_URL + '/')}">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Pouria Business">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="googlebot" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="{url}">
+<!-- Open Graph -->
+<meta property="og:type" content="{page_type}">
+<meta property="og:site_name" content="{BRAND}">
+<meta property="og:locale" content="en_US">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
-<meta property="og:image" content="{SITE_URL}/assets/img/og-image.png">
-<meta property="og:url" content="{canonical or (SITE_URL + '/')}">
+<meta property="og:image" content="{og_image}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{BRAND} — Excel automation systems for small business">
+<meta property="og:url" content="{url}">
+<!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@pouria_busines">
+<meta name="twitter:creator" content="@pouria_busines">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
-<meta name="twitter:image" content="{SITE_URL}/assets/img/og-image.png">
-<link rel="icon" href="{base}assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="{base}assets/img/og-image.png">
+<meta name="twitter:image" content="{og_image}">
+<meta name="twitter:image:alt" content="{BRAND} — Excel automation systems for small business">
+<!-- Icons: profile photo, square, multi-size -->
+<link rel="icon" href="{base}favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="{base}assets/img/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{base}assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="{base}assets/img/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="{base}assets/img/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="{base}assets/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="{base}assets/img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="192x192" href="{base}assets/img/favicon-192.png">
+<link rel="mask-icon" href="{base}assets/favicon.svg" color="#34e0a1">
+<link rel="manifest" href="{base}site.webmanifest">
+<meta name="application-name" content="{BRAND}">
+<meta name="apple-mobile-web-app-title" content="{BRAND}">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preload" href="{base}assets/fonts/SpaceGrotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{base}assets/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{base}css/site.css">
 {extra}
-</head>
+{ld}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 """
@@ -443,8 +543,9 @@ def footer(base=""):
 """
 
 
-def page(filename, title, description, body, base="", active="", extra_head="", canonical="", body_class=""):
-    html = (head(title, description, base, extra_head, canonical)
+def page(filename, title, description, body, base="", active="", extra_head="", canonical="", body_class="", structured=None, page_type="website", image="assets/img/og-image.png"):
+    html = (head(title, description, base, extra_head, canonical,
+                 page_type=page_type, structured=structured, image=image)
             + nav(base, active)
             + body
             + footer(base)

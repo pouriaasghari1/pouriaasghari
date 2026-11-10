@@ -1,0 +1,19 @@
+{
+  "name": "Pouria Business | Excel Automation & Business Solutions",
+  "short_name": "Pouria Business",
+  "description": "Pouria Business by Pouria Asghari provides smart Excel automation solutions for sales management, inventory tracking, business reporting, and order management.",
+  "id": "/pouriaasghari/",
+  "start_url": "/pouriaasghari/",
+  "scope": "/pouriaasghari/",
+  "display": "standalone",
+  "background_color": "#050706",
+  "theme_color": "#050706",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    { "src": "assets/img/favicon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/img/favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

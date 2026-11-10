@@ -290,9 +290,19 @@ def build_about():
 {cta_band('', 'Tell me about the spreadsheet you dread opening.', 'A short message is enough to start. You will get a straight answer about what is possible, what it costs, and how long it takes.',
           primary=(('contact.html', 'Contact the studio'),), secondary=('portfolio.html', 'Personal portfolio'))}
 </main>"""
+    about_ld = site_identity() + jsonld({
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Pouria Business",
+        "url": SITE_URL + "/about.html",
+        "description": "Pouria Business is a one-person Excel automation studio founded by Pouria Asghari.",
+        "mainEntity": {"@id": SITE_URL + "/#person"},
+        "isPartOf": {"@id": SITE_URL + "/#website"},
+    })
+
     page("about.html", "About — Excel Automation Studio | Pouria Business",
          "Pouria Business is a one-person Excel automation studio building professional Excel systems for small businesses, retailers and wholesalers.",
-         body, base="", active="about", canonical=SITE_URL + "/about.html")
+         body, base="", active="about", canonical=SITE_URL + "/about.html", structured=about_ld)
 
 
 # =========================================================== faq.html
@@ -358,9 +368,31 @@ def build_faq():
 .faq-layout{{display:grid;gap:clamp(26px,4vw,44px);max-width:900px}}
 .faq-group__title{{font-size:13px;font-family:var(--font-b);font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}}
 </style>"""
+    faq_items = []
+    for _title, _items in groups:
+        for _q, _a in _items:
+            import re as _re
+            faq_items.append({
+                "@type": "Question",
+                "name": _q,
+                "acceptedAnswer": {"@type": "Answer", "text": _re.sub(r"<[^>]+>", "", _a)},
+            })
+    faq_ld = site_identity() + jsonld({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faq_items,
+    }) + jsonld({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": "FAQ", "item": SITE_URL + "/faq.html"},
+        ],
+    })
+
     page("faq.html", "FAQ — Excel Automation Systems | Pouria Business",
          "Frequently asked questions about Pouria Business Excel automation: file format, Excel versions, delivery times, data privacy and post-handover support.",
-         body, base="", active="", canonical=SITE_URL + "/faq.html")
+         body, base="", active="", canonical=SITE_URL + "/faq.html", structured=faq_ld)
 
 
 # =========================================================== contact.html
@@ -498,9 +530,35 @@ def build_contact():
 .steps-mini p{font-size:13px;color:var(--muted);line-height:1.55}
 </style>"""
 
+    contact_ld = site_identity() + jsonld({
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Pouria Business",
+        "url": SITE_URL + "/contact.html",
+        "description": "Contact Pouria Business about a custom Excel automation project.",
+        "isPartOf": {"@id": SITE_URL + "/#website"},
+        "about": {"@id": SITE_URL + "/#organization"},
+        "mainEntity": {
+            "@type": "Organization",
+            "@id": SITE_URL + "/#organization",
+            "name": BRAND,
+            "email": EMAIL,
+            "url": SITE_URL + "/",
+            "contactPoint": [{
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "email": EMAIL,
+                "availableLanguage": ["English", "Persian"],
+                "url": SITE_URL + "/contact.html",
+            }],
+            "sameAs": [INSTAGRAM, GITHUB],
+        },
+    })
+
     page("contact.html", "Contact — Start an Excel Automation Project | Pouria Business",
          "Contact Pouria Business to discuss a custom Excel automation project. Personal reply within one working day, in English or Persian.",
-         body, base="", active="contact", extra_head=contact_css, canonical=SITE_URL + "/contact.html")
+         body, base="", active="contact", extra_head=contact_css, canonical=SITE_URL + "/contact.html",
+         structured=contact_ld)
 
 
 if __name__ == "__main__":
