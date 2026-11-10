@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
-"""Shared layout + content data for the Gridline Systems site."""
+"""Shared layout + content data for the Pouria Business site."""
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BRAND = "Pouria Business"
+BRAND_SHORT = "POURIA"
+BRAND_TAG = "BUSINESS"
 SITE_URL = "https://pouriaasghari1.github.io/pouriaasghari"
-EMAIL = "pouriaasghari@gmail.com"
-TELEGRAM = "https://t.me/pouriaasghari_1"
+EMAIL = "pouriabusines1@gmail.com"
+INSTAGRAM = "https://www.instagram.com/pouria_busines/"
+INSTAGRAM_HANDLE = "@pouria_busines"
+# Telegram is intentionally empty until the owner supplies the real handle.
+TELEGRAM = ""
 GITHUB = "https://github.com/pouriaasghari1"
 
 # --------------------------------------------------------------------------
@@ -47,6 +53,7 @@ def ico(name, cls="", sw=1.7):
         "play": '<path d="M8 5.5v13l11-6.5z"/>',
         "globe": '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 3 2.6 15 0 18M12 3c-2.6 3-2.6 15 0 18"/>',
         "database": '<ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
+        "instagram": '<rect x="2.8" y="2.8" width="18.4" height="18.4" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.2" cy="6.9" r="1.05" fill="currentColor" stroke="none"/>',
         "broom": '<path d="M4 21l5-5M14 3l7 7-4 2-5-5z"/><path d="M9 12l-4 9 9-4"/>',
     }
     return ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="%s" '
@@ -283,11 +290,11 @@ def head(title, description, base="", extra="", canonical=""):
 <meta name="theme-color" content="#050706">
 <title>{title}</title>
 <meta name="description" content="{description}">
-<meta name="author" content="Pouria Asghari — Gridline Systems">
+<meta name="author" content="Pouria Business">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="{canonical or (SITE_URL + '/')}">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Gridline Systems">
+<meta property="og:site_name" content="Pouria Business">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
 <meta property="og:image" content="{SITE_URL}/assets/img/og-image.png">
@@ -326,9 +333,9 @@ def nav(base="", active=""):
     )
     return f"""<header class="nav" id="site-nav">
  <div class="container nav__inner">
-  <a class="brand" href="{base}index.html" aria-label="Gridline Systems — home">
-   <img class="brand__mark" src="{base}assets/logo.svg" alt="" width="36" height="36">
-   <span class="brand__text"><span class="brand__name">GRIDLINE</span><span class="brand__tag">EXCEL SYSTEMS</span></span>
+  <a class="brand" href="{base}index.html" aria-label="{BRAND} — home" title="{BRAND}">
+   <img class="brand__mark" src="{base}assets/logo.svg" alt="{BRAND} logo" width="36" height="36">
+   <span class="brand__text"><span class="brand__name">{BRAND}</span><span class="brand__tag">EXCEL AUTOMATION</span></span>
   </a>
   <nav class="nav__links" aria-label="Main">
    <a href="{base}index.html"{' class="nav__link is-active"' if active == 'home' else ' class="nav__link"'}>Home</a>
@@ -377,6 +384,11 @@ def nav(base="", active=""):
 
 
 def footer(base=""):
+    # Telegram stays hidden until the owner supplies the real handle/link.
+    telegram_social = (f'<a href="{TELEGRAM}" target="_blank" rel="noopener noreferrer" '
+                       f'aria-label="Telegram" title="Telegram">{ico("send", sw=1.8)}</a>') if TELEGRAM else ""
+    telegram_link = (f'<li><a href="{TELEGRAM}" target="_blank" rel="noopener noreferrer">Telegram</a></li>'
+                     if TELEGRAM else "")
     links = "".join(
         f'<li><a href="{base}products/{p["slug"]}.html">{p["short"]}</a></li>' for p in PRODUCTS
     )
@@ -384,14 +396,15 @@ def footer(base=""):
  <div class="container">
   <div class="footer__top">
    <div class="footer__brand">
-    <a class="brand" href="{base}index.html" aria-label="Gridline Systems — home">
-     <img class="brand__mark" src="{base}assets/logo.svg" alt="" width="36" height="36">
-     <span class="brand__text"><span class="brand__name">GRIDLINE</span><span class="brand__tag">EXCEL SYSTEMS</span></span>
+    <a class="brand" href="{base}index.html" aria-label="{BRAND} — home" title="{BRAND}">
+     <img class="brand__mark" src="{base}assets/logo.svg" alt="{BRAND} logo" width="36" height="36">
+     <span class="brand__text"><span class="brand__name">{BRAND}</span><span class="brand__tag">EXCEL AUTOMATION</span></span>
     </a>
-    <p>Professional Excel automation systems for small businesses, retailers and wholesalers. Built by Pouria Asghari.</p>
+    <p>Professional Excel automation systems for small businesses, retailers and wholesalers. Founded and run by Pouria Asghari.</p>
     <div class="social" style="margin-top:18px">
-     <a href="mailto:{EMAIL}" aria-label="Email Gridline Systems" title="{EMAIL}">{ico('mail', sw=1.8)}</a>
-     <a href="{TELEGRAM}" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">{ico('send', sw=1.8)}</a>
+     <a href="{INSTAGRAM}" target="_blank" rel="noopener noreferrer" aria-label="Instagram {INSTAGRAM_HANDLE}" title="Instagram {INSTAGRAM_HANDLE}">{ico('instagram', sw=1.8)}</a>
+     <a href="mailto:{EMAIL}" aria-label="Email {BRAND}" title="{EMAIL}">{ico('mail', sw=1.8)}</a>
+     {telegram_social}
      <a href="{GITHUB}" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub">{ico('code', sw=1.8)}</a>
     </div>
    </div>
@@ -413,14 +426,15 @@ def footer(base=""):
     <h4>Contact</h4>
     <ul>
      <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
-     <li><a href="{TELEGRAM}" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+     <li><a href="{INSTAGRAM}" target="_blank" rel="noopener noreferrer">Instagram {INSTAGRAM_HANDLE}</a></li>
+     {telegram_link}
      <li><a href="{base}contact.html">Project briefing form</a></li>
      <li><a href="{base}portfolio.html">Personal portfolio (older)</a></li>
     </ul>
    </div>
   </div>
   <div class="footer__bottom">
-   <span>© <span data-year>2026</span> Gridline Systems · Pouria Asghari. All rights reserved.</span>
+   <span>© <span data-year>2026</span> {BRAND}. All rights reserved.</span>
    <span>Built with plain HTML, CSS and JavaScript · Hosted on GitHub Pages</span>
   </div>
  </div>

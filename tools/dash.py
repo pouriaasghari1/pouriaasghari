@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Generates original Excel-dashboard mockups (SVG -> PNG) for the Gridline Systems site.
+Generates original Excel-dashboard mockups (SVG -> PNG) for the Pouria Business site.
 All artwork is drawn from scratch (no third-party screenshots).
 """
 import math, os, subprocess, json
 
-OUT_SVG = "/home/user/pouriaasghari/site-assets-tmp/svg"
+OUT_SVG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "svg")
 OUT_PNG = "/home/user/pouriaasghari/assets/img"
 os.makedirs(OUT_SVG, exist_ok=True)
 os.makedirs(OUT_PNG, exist_ok=True)

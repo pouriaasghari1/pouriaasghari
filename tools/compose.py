@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Composes the dashboard mockups."""
+"""Composes the Pouria Business dashboard mockups."""
 import sys, os, math, random
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from dash import *  # noqa
@@ -17,8 +17,8 @@ def rail(active, extra_footer=None):
     o.append(rect(24, 74, 38, 38, 11, ACC_DARC, stroke="#1f4a38"))
     for i, hh in enumerate([9, 13, 17]):
         o.append(rect(32 + i * 8, 96 - hh, 5, hh, 2, ACC if i == 2 else "#1c6b4e"))
-    o.append(text(74, 91, "GRIDLINE", 14, TXT, DISP, 700, "start", "1.2"))
-    o.append(text(74, 105, "SYSTEMS", 10, ACC, UI, 700, "start", "3.6"))
+    o.append(text(74, 91, "POURIA", 14, TXT, DISP, 700, "start", "1.2"))
+    o.append(text(74, 105, "BUSINESS", 10, ACC, UI, 700, "start", "3.2"))
     o.append(line(24, 136, RAIL - 24, 136, BORDER))
     o.append(text(26, 158, "WORKSPACE", 7.8, FAINT, UI, 700, "start", "1.6"))
     nav = [("Overview", "grid"), ("Inventory", "box"), ("Sales", "cart"), ("Wholesale", "truck"),
@@ -106,7 +106,7 @@ def kpi_row(y, items, h=104, gap=16):
 
 
 def frame(title, sub, active, tabs, chips, body, sheet="Overview"):
-    o = [excel_chrome(W, "Gridline Systems · Dashboard App", ["Data", "Reports", "Settings"], "Data",
+    o = [excel_chrome(W, "Pouria Business · Dashboard App", ["Data", "Reports", "Settings"], "Data",
                       subtitle="Connected to workbook · auto-saved 2 min ago")]
     o.append(rail(active))
     o.append(header(title, sub, chips))
@@ -501,15 +501,15 @@ def reporting():
 # ============ HERO (wide, rich) ============
 def hero():
     W_, H_ = 1560, 1040
-    b = [excel_chrome(W_, "Gridline Systems · Dashboard App", ["Data", "Reports", "Settings"], "Data",
+    b = [excel_chrome(W_, "Pouria Business · Dashboard App", ["Data", "Reports", "Settings"], "Data",
                       subtitle="Northline_Group_Master.xlsx · auto-saved 2 min ago")]
     # rail
     o = [rect(0, 44, 250, H_ - 44, 0, "#080c0a"), line(250, 44, 250, H_, BORDER)]
     o.append(rect(24, 74, 38, 38, 11, ACC_DARC, stroke="#1f4a38"))
     for i, hh in enumerate([9, 13, 17]):
         o.append(rect(32 + i * 8, 96 - hh, 5, hh, 2, ACC if i == 2 else "#1c6b4e"))
-    o.append(text(74, 91, "GRIDLINE", 14, TXT, DISP, 700, "start", "1.2"))
-    o.append(text(74, 105, "SYSTEMS", 10, ACC, UI, 700, "start", "3.6"))
+    o.append(text(74, 91, "POURIA", 14, TXT, DISP, 700, "start", "1.2"))
+    o.append(text(74, 105, "BUSINESS", 10, ACC, UI, 700, "start", "3.2"))
     o.append(line(24, 136, 226, 136, BORDER))
     o.append(text(26, 158, "LIVE DASHBOARD", 7.8, FAINT, UI, 700, "start", "1.6"))
     o.append(rect(18, 168, 214, 46, 10, "#0e1613", stroke=BORDER))
@@ -654,7 +654,7 @@ def og():
     b.append(rect(72, 64, 46, 46, 13, ACC_DARC, stroke="#1f4a38"))
     for i, hh in enumerate([11, 16, 21]):
         b.append(rect(82 + i * 10, 92 - hh, 6, hh, 2.4, ACC if i == 2 else "#1c6b4e"))
-    b.append(text(134, 86, "GRIDLINE SYSTEMS", 17, TXT, DISP, 700, "start", "1.5"))
+    b.append(text(134, 86, "POURIA BUSINESS", 17, TXT, DISP, 700, "start", "1.5"))
     b.append(text(134, 104, "EXCEL AUTOMATION", 9.5, ACC, UI, 700, "start", "3"))
     b.append(text(72, 250, "Excel systems that", 58, TXT, DISP, 600, "start", "-1.4"))
     b.append(text(72, 316, "run your business.", 58, TXT, DISP, 600, "start", "-1.4"))

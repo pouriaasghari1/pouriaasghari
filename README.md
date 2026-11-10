@@ -1,8 +1,7 @@
-# Gridline Systems — Excel Automation Studio
+# Pouria Business — Excel Automation Studio
 
-The business website for **Gridline Systems**, an Excel automation studio run by
-**Pouria Asghari**: professional Excel systems for small businesses, retailers and
-wholesalers.
+The business website for **Pouria Business**, an Excel automation studio offering
+professional Excel systems for small businesses, retailers and wholesalers.
 
 Live site: **https://pouriaasghari1.github.io/pouriaasghari/**
 
@@ -64,8 +63,19 @@ No stock images, no third-party screenshots, no AI-generated text artefacts.
 - The demos are described as *simulations of the calculation logic* — not as the product itself.
 - The contact form does not fake a server submission: it composes a pre-filled email in the
   visitor's own mail client (this is a static GitHub Pages site).
-- Real contact details only, taken from the existing repository: `pouriaasghari@gmail.com`,
-  `t.me/pouriaasghari_1`, `github.com/pouriaasghari1`.
+- Real contact details only: `pouriabusines1@gmail.com`,
+  `instagram.com/pouria_busines`, `github.com/pouriaasghari1`.
+
+## Telegram
+
+Telegram is intentionally **not** linked on the site yet: the owner has not supplied an
+official Telegram handle, and no username is invented. To enable it, set `TELEGRAM` in
+`tools/tpl.py` to the real link and rebuild — the footer icon, footer link and Contact page
+row all render automatically.
+
+```python
+TELEGRAM = "https://t.me/your_real_handle"   # tools/tpl.py
+```
 
 ## Publishing
 
@@ -77,7 +87,7 @@ branch root. Pushing the new files to `main` is all that is needed:
 
 ```
 git add .
-git commit -m "Add Gridline Systems business website"
+git commit -m "Rebrand site as Pouria Business"
 git push origin main
 ```
 
@@ -115,5 +125,5 @@ A local server is required to see the WebP images and fonts exactly as deployed;
 
 ---
 
-© Gridline Systems · Pouria Asghari. Code, copy, logo and artwork in this repository are
-original work for this project.
+© Pouria Business. Code, copy, logo and artwork in this repository are original work for
+this project.

@@ -338,7 +338,7 @@ def build_product(p):
 </div>"""
 
     page(f"products/{p['slug']}.html",
-         f"{p['name']} — Excel system for {p['best_title']} | Gridline Systems",
+         f"{p['name']} — Excel system for {p['best_title']} | Pouria Business",
          p['tagline'] + ' ' + p['desc'],
          body, base="../", active="products", canonical=f"{SITE_URL}/products/{p['slug']}.html")
 
@@ -455,8 +455,8 @@ def build_demo():
 .demo-disclaimer{margin-top:16px;font-size:11.5px;color:var(--faint);line-height:1.6}
 </style>"""
 
-    page("demo.html", "Live Product Demonstrations — Excel Automation Logic | Gridline Systems",
-         "Interactive demonstrations of the Gridline inventory, sales, wholesale, expense and reporting systems. Real calculation logic running on sample data in your browser.",
+    page("demo.html", "Live Product Demonstrations — Excel Automation Logic | Pouria Business",
+         "Interactive demonstrations of the Pouria Business inventory, sales, wholesale, expense and reporting systems. Real calculation logic running on sample data in your browser.",
          body, base="", active="", extra_head=extra,
          canonical=SITE_URL + "/demo.html")
 
