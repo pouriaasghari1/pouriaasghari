@@ -535,7 +535,7 @@ def footer(base=""):
   </div>
   <div class="footer__bottom">
    <span>© <span data-year>2026</span> {BRAND}. All rights reserved.</span>
-   <span>Built with plain HTML, CSS and JavaScript · Hosted on GitHub Pages</span>
+   <span>Built with plain HTML, CSS and JavaScript · Excel automation by Pouria Business</span>
   </div>
  </div>
 </footer>

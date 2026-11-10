@@ -457,7 +457,7 @@ def build_contact():
  <div>
   <button class="btn btn--primary btn--block" type="submit">Open pre-filled email {ico('send', sw=2)}</button>
  </div>
- <p class="form__note">This site is static and hosted on GitHub Pages, so the form does not upload anything to a server. Pressing the button composes an email in your own mail app with these details filled in — you can edit it before sending. Prefer to write directly? Use <a href="mailto:{EMAIL}" style="color:var(--acc)">{EMAIL}</a>.</p>
+ <p class="form__note">This form does not upload anything to a server. Pressing the button composes an email in your own mail app with these details filled in — you can edit it before sending. Prefer to write directly? Use <a href="mailto:{EMAIL}" style="color:var(--acc)">{EMAIL}</a>.</p>
 </form>"""
 
     body = f"""<main id="main">
